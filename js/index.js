@@ -10,6 +10,7 @@ import { buildUserStrings } from "./modules/buildUserStrings.js";
 import { getUserNotes } from "./modules/getUserNotes.js";
 import { getLocalStorage } from "./utils/storage.js";
 import { SHARPS, FLATS } from "./data/constants.js";
+import fixEnharmonics from "./modules/fixEnharmonics.js";
 
 /* Get DOM elements */
 // Settings form
