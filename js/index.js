@@ -7,6 +7,7 @@ import { onFirstVisit,
   onKeyChange } from "./ui/eventHandlers.js";
 import { resetAllData } from "./ui/renderResults.js";
 import { buildUserStrings } from "./modules/buildUserStrings.js";
+import { getUserNotes } from "./modules/getUserNotes.js";
 
 /* Get DOM elements */
 // Settings form
@@ -29,6 +30,7 @@ function getChordName() {
   buildUserStrings();
 
   // 2. Get user fret #'s and convert fret #'s into note values
+  getUserNotes(userFretNotes);
 
   // 3. Remove duplicate user notes
 
