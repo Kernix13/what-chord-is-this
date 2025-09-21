@@ -63,6 +63,7 @@ button {
   padding: 0.375rem 0.75rem;
   background-color: #fff;
   border: 2px solid hsl(212, 75%, 75%);
+  border-radius: 0.375em;
   transition: background-color 250ms ease;
 }
 
@@ -168,8 +169,9 @@ input[type="number"] {
 
 /* Form 2 */
 .frets-form {
-  border: 1px solid hsl(212, 75%, 75%);
+  border: 2px solid hsl(212, 75%, 90%);
   padding: 0.75rem 0;
+  border-radius: 0.375rem;;
 }
 
 .strings,
