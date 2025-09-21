@@ -31,3 +31,30 @@ export function loadStrings(index) {
   const currentTuning = Object.values(instrumentTunings)[index]
   createStrings(currentTuning);
 }
+
+// Create number inputs and labels then append to the DOM (Frets Form)
+function createStrings(tuning) {
+  tuning.forEach((string, i) => {
+
+    // label and input container
+    const div = document.createElement('div');
+    div.setAttribute('class', 'string-group');
+
+    const label = document.createElement('label');
+    label.setAttribute('for', `str-${i + 1}`);
+    label.setAttribute('class', 'form-label');
+    label.append(document.createTextNode(string))
+
+    const input = document.createElement('input');
+    input.setAttribute('type', 'number');
+    input.setAttribute('class', 'form-control note');
+    input.setAttribute('id', `str-${i + 1}`);
+    input.setAttribute('min', '0');
+    input.setAttribute('step', '1');
+    input.setAttribute('max', '18');
+
+    div.append(label);
+    div.append(input);
+    stringsDiv.append(div)
+  })
+}
