@@ -104,7 +104,7 @@ The project is organized as follows:
 ├── js/
 │   ├── index.js                    # Entry point; imports modules, event listeners
 │   ├── data/
-│   │   ├── chord-intervals.js      # Object containing all chord types and related info
+│   │   ├── chord-intervals.js      # Array of the chord objects with chord info
 │   │   ├── chord-intervals.json    # (Optional; reserved for future API use)
 │   │   └── constants.js            # Constants used across the app
 │   ├── modules/
