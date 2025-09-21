@@ -71,7 +71,13 @@ function getChordName() {
     intervalsForUniqueNotes.forEach((key, i) => {
       intervalsAndNotes[key] = uniqueUserNotes[i];
     });
-    
+
+    // 8. Handle edge cases/exceptions: enharmonic equivalents
+
+    // 9. Check for matching chord in chord-intervals.js: modules/searchForChordMatch() - called in fixEnharmonics
+
+    // 10. Check for a matching chord and then perform all other steps 
+
   }
 }
 
