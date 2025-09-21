@@ -61,6 +61,16 @@ function getChordName() {
         .slice(FLATS.indexOf(userNote))
         .concat(FLATS.slice(0, FLATS.indexOf(userNote)));
     }
+
+    // 5. Convert unique user notes to intervals
+    intervalsForUniqueNotes = [];
+    uniqueUserNotes.forEach(note => intervalsForUniqueNotes.push(scaleFromUniqueNote.indexOf(note)));
+  
+    // 6. Create an object: key = note interval, value = note
+    const intervalsAndNotes = {};
+    intervalsForUniqueNotes.forEach((key, i) => {
+      intervalsAndNotes[key] = uniqueUserNotes[i];
+    });
     
   }
 }
