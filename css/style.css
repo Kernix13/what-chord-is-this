@@ -11,6 +11,7 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 1rem;
   line-height: 1.4;
+  color: #333;
 }
 
 h1,
@@ -41,7 +42,7 @@ p {
 header {
   margin: 0;
   padding: 1rem 3rem 1rem 1rem;
-  background-color: rgb(254, 241, 236);
+  background-color: hsl(212, 32%, 91%);
 }
 
 .header-nav {
@@ -60,13 +61,19 @@ button {
   font-size: 1.125rem;
   line-height: 1.1;
   padding: 0.375rem 0.75rem;
-  background-color: rgb(255, 233, 225);
-  border: 1px solid coral;
+  background-color: #fff;
+  border: 2px solid hsl(212, 75%, 75%);
+  transition: background-color 250ms ease;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: hsl(212, 32%, 93%);
 }
 
 select {
   font-family: inherit;
-  border: 1px solid coral;
+  border: 1px solid hsl(212, 75%, 25%);
 }
 
 option {
@@ -108,7 +115,7 @@ input[type="number"] {
   justify-content: center;
   gap: 1rem;
 
-  background-color: rgb(255, 233, 225);
+  background-color: hsl(212, 32%, 91%);
   padding: 0.75rem;
   width: 15rem;
 
@@ -161,7 +168,7 @@ input[type="number"] {
 
 /* Form 2 */
 .frets-form {
-  border: 1px solid rgb(255, 182, 155);
+  border: 1px solid hsl(212, 75%, 75%);
   padding: 0.75rem 0;
 }
 
