@@ -73,6 +73,7 @@ function getChordName() {
     });
 
     // 8. Handle edge cases/exceptions: enharmonic equivalents
+    fixEnharmonics(intervalsAndNotes, scaleFromUniqueNote, intervalsForUniqueNotes);
 
     // 9. Check for matching chord in chord-intervals.js: modules/searchForChordMatch() - called in fixEnharmonics
 
