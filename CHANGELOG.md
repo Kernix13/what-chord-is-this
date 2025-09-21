@@ -13,3 +13,9 @@ All notable changes to this project will be documented in this file.
 ### Added
 
 - Create ui functions to load tunings and strings into DOM (Issue #5)
+
+## [Unreleased] - 2025-09-21
+
+### Added
+
+- Created `toggleSettingsForm` function to be called in the listener for the `settingsBtn` in index.js

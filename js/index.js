@@ -1,6 +1,6 @@
 "use strict"
 
-import { onFirstVisit } from "./ui/eventHandlers.js";
+import { onFirstVisit, toggleSettingsForm } from "./ui/eventHandlers.js";
 
 /* Get DOM elements */
 // Settings form
@@ -18,3 +18,6 @@ const pageReset = document.getElementById('page-reset');
 */
 // Set initial state for Instrument, Tuning, Strings and Key
 document.addEventListener("DOMContentLoaded", onFirstVisit);
+
+// Show/Hide settings form
+settingsBtn.addEventListener('click', toggleSettingsForm);
