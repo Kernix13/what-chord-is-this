@@ -17,6 +17,10 @@ const pageReset = document.getElementById('page-reset');
 // 1 Global variable (?!?)
 const userFretNotes = [];
 
+function getChordName() {
+  console.log('Working')
+}
+
 /** 
  * * Event Listeners 
 */
@@ -45,3 +49,19 @@ keys.forEach((key) => {
     onKeyChange(e);
   })
 })
+
+// Reset number inputs, and remove chord search results from DOM 
+// pageReset.addEventListener('click', () => {
+//   resetAllData(userFretNotes, chordFound);
+//   document.querySelector('h1').scrollIntoView({ behavior: 'smooth' });
+// });
+
+// Run main function and get user numbers
+fretsForm.addEventListener('submit', function (e) {
+  e.preventDefault();
+  // resetAllData(userFretNotes, chordFound);
+
+  getChordName();
+
+  // document.querySelector('h2').scrollIntoView({ behavior: 'smooth' });
+});
