@@ -85,3 +85,15 @@ All notable changes to this project will be documented in this file.
 ### Added
 
 - Created the function `modules/searchForChordMatch` to fix edge cases for the chord name. (Issue #28)
+
+## [Unreleased] - 2025-09-21
+
+### Added
+
+- Created the functions `createTitleCard`, `createCard`, and `createScaleDegreesCard`. (Issue #33)
+
+## [Unreleased] - 2025-09-21
+
+### Added
+
+- Created the functions notEnoughNotesError and noMatchError to handle errors (Issue #35)
