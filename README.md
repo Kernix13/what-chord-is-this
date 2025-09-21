@@ -102,7 +102,7 @@ The project is organized as follows:
 ├── css/
 │   └── style.css                   # Main stylesheet
 ├── js/
-│   ├── index.js                    # Entry point; imports modules and sets up event listeners
+│   ├── index.js                    # Entry point; imports modules, event listeners
 │   ├── data/
 │   │   ├── chord-intervals.js      # Object containing all chord types and related info
 │   │   ├── chord-intervals.json    # (Optional; reserved for future API use)
