@@ -72,4 +72,16 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
-- Created logic in getChordName in index.js to convert unique user notes to intervals and then build an object: { interval: note }. (Issue #25)
+- Created logic in `getChordName` in index.js to convert unique user notes to intervals and then build an object: { interval: note }. (Issue #25)
+
+## [Unreleased] - 2025-09-21
+
+### Added
+
+- Created the function `modules/fixEnharmonics` to fix edge cases for the chord name. (Issue #27)
+
+## [Unreleased] - 2025-09-21
+
+### Added
+
+- Created the function `modules/searchForChordMatch` to fix edge cases for the chord name. (Issue #28)
