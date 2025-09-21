@@ -1,6 +1,6 @@
 "use strict"
 
-import { onFirstVisit, toggleSettingsForm, onInstrumentChange, onTuningChange } from "./ui/eventHandlers.js";
+import { onFirstVisit, toggleSettingsForm, onInstrumentChange, onTuningChange, onKeyChange } from "./ui/eventHandlers.js";
 import { resetAllData } from "./ui/renderResults.js";
 
 /* Get DOM elements */
@@ -36,4 +36,12 @@ instruments.addEventListener('change', e => {
 tuningsSelect.addEventListener('change', e => {
   // resetAllData(userFretNotes, chordFound);
   onTuningChange(e);
+})
+
+// Sharp/Flat keys event listener
+keys.forEach((key) => {
+  key.addEventListener('click', e => {
+    // resetAllData(userFretNotes, chordFound);
+    onKeyChange(e);
+  })
 })

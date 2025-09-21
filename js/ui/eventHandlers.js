@@ -11,7 +11,7 @@ const stringsDiv = document.getElementById('strings');
 const settingsForm = document.getElementById('settings-form');
 const settingsBtn = document.getElementById('settings-btn');
 
-// Listener for DomContentLoaded
+// Function for DomContentLoaded listener
 export function onFirstVisit() {
   const initialSettings = {
       instrument: 0,
@@ -49,7 +49,7 @@ export function onFirstVisit() {
     }
 }
 
-// Listener for Show Settings button
+// Function for Show Settings button listener
 export function toggleSettingsForm() {
   settingsForm.classList.toggle('onscreen');
 
@@ -61,7 +61,7 @@ export function toggleSettingsForm() {
   }
 }
 
-// Listener for instruments select list
+// Function for instruments select list listener
 export function onInstrumentChange(event) {
   const savedSettings = getLocalStorage();
   
@@ -93,7 +93,7 @@ export function onInstrumentChange(event) {
     loadStrings(0);
 }
 
-// Listener for tunings select list
+// Function for tunings select list listener
 export function onTuningChange(event) {
   const savedSettings = getLocalStorage();
   
@@ -131,3 +131,19 @@ export function onTuningChange(event) {
   // Load new strings from selectedTuning
   loadStrings(selectedTuning[0].value);
 } 
+
+// Function for keys radio buttons listener
+export function onKeyChange(event) {
+  const savedSettings = getLocalStorage();
+    
+  if (savedSettings.keyId === 'flat' && event.target.id === 'flat') return;
+  if (savedSettings.keyId === 'sharp' && event.target.id === 'sharp') return;
+  
+  /** 
+   * TODO: I need to prevent the user changing the key to 'sharp' for FLAT_TUNINGS
+  */ 
+
+  savedSettings.keyId === 'flat'
+    ? setLocalStorage({ ...savedSettings, keyId: 'sharp' })
+    : setLocalStorage({ ...savedSettings, keyId: 'flat' });
+}
