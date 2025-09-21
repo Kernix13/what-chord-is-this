@@ -1,5 +1,7 @@
 "use strict"
 
+import { onFirstVisit } from "./ui/eventHandlers.js";
+
 /* Get DOM elements */
 // Settings form
 const instruments = document.getElementById('instruments');
@@ -10,3 +12,9 @@ const settingsBtn = document.getElementById('settings-btn');
 // Frets form
 const fretsForm = document.getElementById('frets-form');
 const pageReset = document.getElementById('page-reset');
+
+/** 
+ * * Event Listeners 
+*/
+// Set initial state for Instrument, Tuning, Strings and Key
+document.addEventListener("DOMContentLoaded", onFirstVisit);
