@@ -12,6 +12,7 @@ import { getLocalStorage } from "./utils/storage.js";
 import { SHARPS, FLATS } from "./data/constants.js";
 import fixEnharmonics from "./modules/fixEnharmonics.js";
 import { chordFound } from "./modules/searchForChordMatch.js";
+import { createCard, createScaleDegreesCard, createTitleCard } from "./ui/renderResults.js";
 
 /* Get DOM elements */
 // Settings form
@@ -134,6 +135,21 @@ function getChordName() {
       // 16. Get chord tendency and chord intervals then join
       const chordIntervalsString = chordFound[0].Intervals.join('-');
       const chordTendency = chordFound[0].Tendency.join(', ').split(' ').join(' ');
+
+      // 17. Create the card for the h2 title and the found chord name
+      createTitleCard(slashChordName)
+
+      // 18. Create cards for 5 other pieces of information
+      /* I think showing the user notes in their order is redundant
+      */
+      createCard('user-notes', ['Your notes: ', userNotes]);
+      createCard('chord-notes', ['Chord notes: ', chordNotes]);
+      createCard('equal-chords', ['Equal chord(s): ', equalChords]);
+      createCard('tendency', ['Chord tendency: ', chordTendency]);
+      createCard('intervals', ['Chord degrees: ', chordIntervalsString]);
+
+      // 19. Get scale degrees for the chord
+      createScaleDegreesCard(chordName, chordFound[0]['scales']);
 
       break;
     }
