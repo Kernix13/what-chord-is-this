@@ -33,6 +33,12 @@ function getChordName() {
   getUserNotes(userFretNotes);
 
   // 3. Remove duplicate user notes
+  let uniqueUserNotes = [];
+  uniqueUserNotes = userFretNotes.filter(tone => {
+    return !uniqueUserNotes.includes(tone) && tone !== undefined 
+      ? uniqueUserNotes.push(tone) 
+      : null;
+  });
 
   let scaleFromUniqueNote = [];
   let intervalsForUniqueNotes;
