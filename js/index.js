@@ -1,6 +1,10 @@
 "use strict"
 
-import { onFirstVisit, toggleSettingsForm, onInstrumentChange, onTuningChange, onKeyChange } from "./ui/eventHandlers.js";
+import { onFirstVisit, 
+  toggleSettingsForm, 
+  onInstrumentChange, 
+  onTuningChange, 
+  onKeyChange } from "./ui/eventHandlers.js";
 import { resetAllData } from "./ui/renderResults.js";
 
 /* Get DOM elements */
@@ -14,11 +18,23 @@ const settingsBtn = document.getElementById('settings-btn');
 const fretsForm = document.getElementById('frets-form');
 const pageReset = document.getElementById('page-reset');
 
-// 1 Global variable (?!?)
+// 1 Global variable 
 const userFretNotes = [];
 
+// The main function called in the fretsForm event listener
 function getChordName() {
-  console.log('Working')
+  
+  // 1. Build six 12-note strings based on the users' tuning
+  // need a function named buildUserStrings();
+
+  // 2. Get user fret #'s and convert fret #'s into note values
+
+  // 3. Remove duplicate user notes
+
+  let scaleFromUniqueNote = [];
+  let intervalsForUniqueNotes;
+
+  // MAIN LOOP WHERE ALL THE WORK IS DONE
 }
 
 /** 
