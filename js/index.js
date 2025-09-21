@@ -6,6 +6,7 @@ import { onFirstVisit,
   onTuningChange, 
   onKeyChange } from "./ui/eventHandlers.js";
 import { resetAllData } from "./ui/renderResults.js";
+import { buildUserStrings } from "./modules/buildUserStrings.js";
 
 /* Get DOM elements */
 // Settings form
@@ -25,7 +26,7 @@ const userFretNotes = [];
 function getChordName() {
   
   // 1. Build six 12-note strings based on the users' tuning
-  // need a function named buildUserStrings();
+  buildUserStrings();
 
   // 2. Get user fret #'s and convert fret #'s into note values
 
