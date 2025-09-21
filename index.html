@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What Chord Is This?</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul class="header-nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+  </header>
+  <form id="settings-form" class="settings-form offscreen" aria-label="Instrument settings">
+
+    <!-- Change to an h2 with an aria label -->
+    <p class="settings-form-title"> <span aria-label="G clef">&#119070;</span> Choose an instrument, tuning, and sharp
+      or flat key.</p>
+
+    <!-- Instruments -->
+    <div id="instrument-list" class="instrument-list">
+      <div class="select-radio">
+        <label for="instruments">Select instrument:</label>
+        <select name="instruments" id="instruments" class="select instruments" aria-label="Default select example">
+          <option value="0" data-length="6">Guitar</option>
+          <option value="1" data-length="5">Banjo</option>
+          <option value="2" data-length="4">Mandolin</option>
+          <option value="3" data-length="4">Ukulele</option>
+        </select>
+      </div>
+
+      <!-- Tuning -->
+      <div id="alt-tunings" class="tunings">
+        <label for="tunings-select">Select tuning:</label>
+        <select name="tunings" id="tunings-select" class="select tunings"></select>
+      </div>
+
+      <!-- Sharp/Flat key radio buttons -->
+      <fieldset>
+        <legend>Select key:</legend>
+        <div id="key" class="key">
+          <div>
+            <input type="radio" name="sharps-flats" id="sharp" value="sharp">
+            <label for="sharp">Sharp</label>
+          </div>
+
+          <div>
+            <input type="radio" name="sharps-flats" id="flat" value="flat">
+            <label for="flat">Flat</label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </form>
+
+  <button id="settings-btn" class="settings-btn">Show Settings</button>
+
+  <main>
+    <div class="container">
+      <h1 class="page-title">What Chord Is This?</h1>
+
+      <form id="frets-form" class="frets-form">
+
+        <!-- Change to an h2 with an aria label -->
+        <!-- Fret numbers -->
+        <p class="settings-form-title"> <span aria-label="G clef">&#119070;</span> Enter your fret numbers</p>
+        <div id="strings" class="strings"></div>
+
+        <!-- Buttons -->
+        <div class="btn-group">
+          <button id="form-submit" class="btn btn-dark" type="submit">
+            Submit
+          </button>
+          <button id="page-reset" class="btn btn-dark mx-2" type="reset">
+            Reset page
+          </button>
+        </div>
+      </form>
+
+      <p id="error-output" class="error-output"></p>
+      <div id="title-chord" class="title-chord"></div>
+      <div id="results" class="results"></div>
+
+
+    </div>
+
+    <!-- This div is for my eventual degrees: note card -->
+    <!-- <div id="results2" class="results"></div> -->
+  </main>
+
+  <script src="./js/index.js" type="module"></script>
+</body>
+
+</html>
