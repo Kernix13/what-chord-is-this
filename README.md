@@ -36,8 +36,8 @@ These screenshots illustrate how the app handles input and displays chord analys
 To run this project locally, clone the repository:
 
 ```sh
-git clone https://github.com/USER_NAME/REPO_NAME.git
-cd REPO_NAME
+git clone https://github.com/Kernix13/what-chord-is-this.git
+cd what-chord-is-this
 ```
 
 ### Prerequisites
