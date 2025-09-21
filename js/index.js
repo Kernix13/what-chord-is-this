@@ -8,6 +8,8 @@ import { onFirstVisit,
 import { resetAllData } from "./ui/renderResults.js";
 import { buildUserStrings } from "./modules/buildUserStrings.js";
 import { getUserNotes } from "./modules/getUserNotes.js";
+import { getLocalStorage } from "./utils/storage.js";
+import { SHARPS, FLATS } from "./data/constants.js";
 
 /* Get DOM elements */
 // Settings form
@@ -44,6 +46,23 @@ function getChordName() {
   let intervalsForUniqueNotes;
 
   // MAIN LOOP WHERE ALL THE WORK IS DONE
+  for (const userNote of uniqueUserNotes) {
+
+    // 4. Build 12-note string arrays for each unique USER note
+    const savedSettings = getLocalStorage();
+    const userKey = savedSettings.keyId;
+
+    if (userKey === 'sharp') {
+      scaleFromUniqueNote = SHARPS
+        .slice(SHARPS.indexOf(userNote))
+        .concat(SHARPS.slice(0, SHARPS.indexOf(userNote)));
+    } else if (userKey === 'flat') {
+      scaleFromUniqueNote = FLATS
+        .slice(FLATS.indexOf(userNote))
+        .concat(FLATS.slice(0, FLATS.indexOf(userNote)));
+    }
+    
+  }
 }
 
 /** 
