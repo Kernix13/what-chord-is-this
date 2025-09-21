@@ -13,6 +13,7 @@ import { SHARPS, FLATS } from "./data/constants.js";
 import fixEnharmonics from "./modules/fixEnharmonics.js";
 import { chordFound } from "./modules/searchForChordMatch.js";
 import { createCard, createScaleDegreesCard, createTitleCard } from "./ui/renderResults.js";
+import { notEnoughNotesError, noMatchError } from "./ui/renderErrors.js";
 
 /* Get DOM elements */
 // Settings form
@@ -152,7 +153,16 @@ function getChordName() {
       createScaleDegreesCard(chordName, chordFound[0]['scales']);
 
       break;
+    } else {
+      // Error message 1 for less than 3 unique notes
+      if (uniqueUserNotes.length < 3) {
+        notEnoughNotesError(uniqueUserNotes);
+      }
     }
+  } 
+  // Error message 2 if no matching chord in chord-intervals.js
+  if (intervalsForUniqueNotes.length >= 3 && chordFound.length === 0) {
+    noMatchError(uniqueUserNotes);
   }
 }
 
@@ -167,36 +177,36 @@ settingsBtn.addEventListener('click', toggleSettingsForm);
 
 // Instrument Select list event listener
 instruments.addEventListener('change', e => {
-  // resetAllData(userFretNotes, chordFound);
+  resetAllData(userFretNotes, chordFound);
   onInstrumentChange(e);
 })
 
 // Tunings Select list event listener
 tuningsSelect.addEventListener('change', e => {
-  // resetAllData(userFretNotes, chordFound);
+  resetAllData(userFretNotes, chordFound);
   onTuningChange(e);
 })
 
 // Sharp/Flat keys event listener
 keys.forEach((key) => {
   key.addEventListener('click', e => {
-    // resetAllData(userFretNotes, chordFound);
+    resetAllData(userFretNotes, chordFound);
     onKeyChange(e);
   })
 })
 
 // Reset number inputs, and remove chord search results from DOM 
-// pageReset.addEventListener('click', () => {
-//   resetAllData(userFretNotes, chordFound);
-//   document.querySelector('h1').scrollIntoView({ behavior: 'smooth' });
-// });
+pageReset.addEventListener('click', () => {
+  resetAllData(userFretNotes, chordFound);
+  document.querySelector('h1').scrollIntoView({ behavior: 'smooth' });
+});
 
 // Run main function and get user numbers
 fretsForm.addEventListener('submit', function (e) {
   e.preventDefault();
-  // resetAllData(userFretNotes, chordFound);
+  resetAllData(userFretNotes, chordFound);
 
   getChordName();
 
-  // document.querySelector('h2').scrollIntoView({ behavior: 'smooth' });
+  document.querySelector('h2').scrollIntoView({ behavior: 'smooth' });
 });
