@@ -23,3 +23,11 @@ export function loadTunings(index) {
     tuningsSelect.append(option);
   }
 }
+
+// Load number inputs and labels into the DOM on instrument select or tunings select (Frets Form)
+export function loadStrings(index) {
+  const savedSettings = getLocalStorage();
+  const instrumentTunings = TUNINGS[savedSettings.instrument];
+  const currentTuning = Object.values(instrumentTunings)[index]
+  createStrings(currentTuning);
+}
