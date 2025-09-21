@@ -106,7 +106,7 @@ The project is organized as follows:
 │   └── constants.js # Constants used across the app
 ├── modules/ # Core logic modules
 │   ├── buildUserStrings.js # Generates a 12-note array for each string
-│   ├── fixEnharmonics.js # Corrects chord note names for enharmonic equivalence
+│   ├── fixEnharmonics.js # Corrects chord note names for enharmonic equivalents
 │   ├── getUserNotes.js # Converts user-entered fret numbers into note names
 │   └── searchForChordMatch.js # Searches chord-intervals.js for matching chords
 ├── ui/ # DOM manipulation and UI rendering
