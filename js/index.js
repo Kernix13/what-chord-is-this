@@ -17,6 +17,10 @@ const pageReset = document.getElementById('page-reset');
 // 1 Global variable (?!?)
 const userFretNotes = [];
 
+/** 
+ * * Core functionality 
+*/
+
 function getChordName() {
   console.log('Working')
 }
