@@ -1,6 +1,6 @@
 "use strict"
 
-import { onFirstVisit, toggleSettingsForm } from "./ui/eventHandlers.js";
+import { onFirstVisit, toggleSettingsForm, onInstrumentChange } from "./ui/eventHandlers.js";
 
 /* Get DOM elements */
 // Settings form
@@ -21,3 +21,9 @@ document.addEventListener("DOMContentLoaded", onFirstVisit);
 
 // Show/Hide settings form
 settingsBtn.addEventListener('click', toggleSettingsForm);
+
+// Instrument Select list event listener
+instruments.addEventListener('change', e => {
+  resetAllData(userFretNotes, chordFound);
+  onInstrumentChange(e);
+})
