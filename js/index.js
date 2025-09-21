@@ -1,6 +1,7 @@
 "use strict"
 
 import { onFirstVisit, toggleSettingsForm, onInstrumentChange } from "./ui/eventHandlers.js";
+import { resetAllData } from "./ui/renderResults.js";
 
 /* Get DOM elements */
 // Settings form
@@ -13,6 +14,9 @@ const settingsBtn = document.getElementById('settings-btn');
 const fretsForm = document.getElementById('frets-form');
 const pageReset = document.getElementById('page-reset');
 
+// 1 Global variable (?!?)
+const userFretNotes = [];
+
 /** 
  * * Event Listeners 
 */
@@ -24,6 +28,6 @@ settingsBtn.addEventListener('click', toggleSettingsForm);
 
 // Instrument Select list event listener
 instruments.addEventListener('change', e => {
-  resetAllData(userFretNotes, chordFound);
+  // resetAllData(userFretNotes, chordFound);
   onInstrumentChange(e);
 })
