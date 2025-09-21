@@ -96,4 +96,4 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
-- Created the functions notEnoughNotesError and noMatchError to handle errors (Issue #35)
+- Created the functions `notEnoughNotesError` and `noMatchError` to handle errors (Issue #35)

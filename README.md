@@ -95,7 +95,7 @@ Then open the server URL in your browser (e.g., http://localhost:8000).
 The project is organized as follows:
 
 ```
-├─  .gitignore
+├── .gitignore
 ├── CHANGELOG.md                    # Project version history and changes
 ├── README.md                       #
 ├── index.html                      # Main HTML page
