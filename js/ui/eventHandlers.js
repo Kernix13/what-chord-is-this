@@ -11,6 +11,7 @@ const stringsDiv = document.getElementById('strings');
 const settingsForm = document.getElementById('settings-form');
 const settingsBtn = document.getElementById('settings-btn');
 
+// Listener for DomContentLoaded
 export function onFirstVisit() {
   const initialSettings = {
       instrument: 0,
@@ -46,4 +47,16 @@ export function onFirstVisit() {
   
       document.getElementById('str-1').focus();
     }
+}
+
+// Listener for Show Settings button
+export function toggleSettingsForm() {
+  settingsForm.classList.toggle('onscreen');
+
+  if (settingsForm.classList.contains('onscreen')) {
+    settingsBtn.innerText = "Hide Settings"
+  } else {
+    settingsBtn.innerText = "Show Settings"
+    document.getElementById('str-1').focus();
+  }
 }
