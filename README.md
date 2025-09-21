@@ -95,27 +95,30 @@ Then open the server URL in your browser (e.g., http://localhost:8000).
 The project is organized as follows:
 
 ```
-├── .gitignore
-├── index.html # Main HTML page
-├── index.js # Entry point; imports modules and sets up event listeners
-├── README.md
-├── style.css # App styling
-├── data/ # Static data used for chord calculations
-│   ├── chord-intervals.js # Object containing all chord types and related info
-│   ├── chord-intervals.json # (Can be removed; reserved for future API use)
-│   └── constants.js # Constants used across the app
-├── modules/ # Core logic modules
-│   ├── buildUserStrings.js # Generates a 12-note array for each string
-│   ├── fixEnharmonics.js # Corrects chord note names for enharmonic equivalents
-│   ├── getUserNotes.js # Converts user-entered fret numbers into note names
-│   └── searchForChordMatch.js # Searches chord-intervals.js for matching chords
-├── ui/ # DOM manipulation and UI rendering
-│   ├── eventHandlers.js # Functions for event listeners
-│   ├── renderErrors.js # Functions to render error messages
-│   ├── renderResults.js # Functions to display chord result cards
-│   └── setupForms.js # Functions to populate tunings and fret inputs
-├── utils/
-│   └── storage.js # LocalStorage get/set functions
+├─  .gitignore
+├── CHANGELOG.md                    # Project version history and changes
+├── README.md                       #
+├── index.html                      # Main HTML page
+├── css/
+│   └── style.css                   # Main stylesheet
+├── js/
+│   ├── index.js                    # Entry point; imports modules and sets up event listeners
+│   ├── data/
+│   │   ├── chord-intervals.js      # Object containing all chord types and related info
+│   │   ├── chord-intervals.json    # (Optional; reserved for future API use)
+│   │   └── constants.js            # Constants used across the app
+│   ├── modules/
+│   │   ├── buildUserStrings.js     # Generates a 12-note array for each string
+│   │   ├── fixEnharmonics.js       # Corrects chord note names for enharmonic equivalents
+│   │   ├── getUserNotes.js         # Converts user-entered fret numbers into note names
+│   │   └── searchForChordMatch.js  # Searches chord-intervals.js for matching chords
+│   ├── ui/
+│   │   ├── eventHandlers.js        # Functions for event listeners
+│   │   ├── renderErrors.js         # Functions to render error messages
+│   │   ├── renderResults.js        # Functions to display chord result cards
+│   │   └── setupForms.js           # Functions to populate tunings and fret inputs
+│   └── utils/
+│       └── storage.js              # LocalStorage get/set functions
 ```
 
 ### Notes
