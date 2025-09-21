@@ -1,6 +1,6 @@
 "use strict"
 
-import { onFirstVisit, toggleSettingsForm, onInstrumentChange } from "./ui/eventHandlers.js";
+import { onFirstVisit, toggleSettingsForm, onInstrumentChange, onTuningChange } from "./ui/eventHandlers.js";
 import { resetAllData } from "./ui/renderResults.js";
 
 /* Get DOM elements */
@@ -30,4 +30,10 @@ settingsBtn.addEventListener('click', toggleSettingsForm);
 instruments.addEventListener('change', e => {
   // resetAllData(userFretNotes, chordFound);
   onInstrumentChange(e);
+})
+
+// Tunings Select list event listener
+tuningsSelect.addEventListener('change', e => {
+  // resetAllData(userFretNotes, chordFound);
+  onTuningChange(e);
 })

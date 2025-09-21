@@ -92,3 +92,42 @@ export function onInstrumentChange(event) {
     // Load new strings number inputs
     loadStrings(0);
 }
+
+// Listener for tunings select list
+export function onTuningChange(event) {
+  const savedSettings = getLocalStorage();
+  
+  // Get all select list option elements, find the selected tuning
+  const options = [...event.target.options];
+  const selectedTuning = options.filter(option => option.selected === true);
+
+  // Remove selected attribute for saved tuning, add it for selected tuning
+  if (savedSettings.tuning !== parseInt(selectedTuning[0].value)) {
+    options[savedSettings.tuning].removeAttribute('selected')
+  }
+  selectedTuning[0].setAttribute('selected', '');
+
+  // Get selected tuning strings array and update localStorage strings array
+  const instrumentTunings = TUNINGS[savedSettings.instrument];
+  const userTuningStrings = Object.values(instrumentTunings)[selectedTuning[0].value];
+
+  // Check if currrent tuning is a flat key tuning and set keyId to 'flat'
+  let newKeyId = savedSettings.keyId;
+  if (FLAT_TUNINGS.includes(userTuningStrings) && newKeyId === 'sharp') {
+    newKeyId = 'flat'
+    sharpKey.removeAttribute('checked');
+    flatKey.setAttribute('checked', '');
+  } else {
+    newKeyId = 'sharp';
+    flatKey.removeAttribute('checked');
+    sharpKey.setAttribute('checked', '');
+  }
+
+  // Update localStorage
+  setLocalStorage({ instrument: savedSettings.instrument, tuning: parseInt(selectedTuning[0].value), strings: userTuningStrings, keyId: newKeyId });
+
+  // Remove string inputs for old instrument/tuning
+  [...stringsDiv.children].forEach(string => string.remove());
+  // Load new strings from selectedTuning
+  loadStrings(selectedTuning[0].value);
+} 
