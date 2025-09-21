@@ -11,6 +11,7 @@ import { getUserNotes } from "./modules/getUserNotes.js";
 import { getLocalStorage } from "./utils/storage.js";
 import { SHARPS, FLATS } from "./data/constants.js";
 import fixEnharmonics from "./modules/fixEnharmonics.js";
+import { chordFound } from "./modules/searchForChordMatch.js";
 
 /* Get DOM elements */
 // Settings form
@@ -79,7 +80,63 @@ function getChordName() {
     // 9. Check for matching chord in chord-intervals.js: modules/searchForChordMatch() - called in fixEnharmonics
 
     // 10. Check for a matching chord and then perform all other steps 
+    if (chordFound.length > 0) {
+      // 11. Join the users' notes
+      const userNotes = uniqueUserNotes.join('-');
 
+      // 12. Put the chord notes in "proper" order then join
+      const foundChordNotes = [];
+      let chordNotes = '';
+
+      chordFound[0].steps.forEach(note => {
+        foundChordNotes.push(intervalsAndNotes[note]);
+      });
+      chordNotes = foundChordNotes.join('-');
+      
+      // 12. Create slash chords for "short" names, or set slashChordName to = the normal name - skip if the chord name is >= 7 characters
+      let slashChordName = '';
+
+      if (intervalsForUniqueNotes[0] !== 0 && chordFound[0].Chord.length < 4) {
+        slashChordName = `${userNote}${chordFound[0].Chord}/${intervalsAndNotes[intervalsForUniqueNotes[0]]}`;
+      } else {
+        slashChordName = userNote + chordFound[0].Chord;
+      }
+
+      // 13. use non-slash chord name for scale degrees card
+      const chordName = userNote + chordFound[0].Chord;
+
+      // 14. Get "Equal Chords" if chordFound has that property then join
+      const equalChordNames = [];
+      if (chordFound[0].hasOwnProperty('Equal Chords')) {
+        chordFound[0]['Equal Chords'].forEach(equal => {
+          equalChordNames.push(scaleFromUniqueNote[equal['key']] + equal['name']);
+        });
+      } else {
+        equalChordNames.push(['Unique']);
+      }
+      const equalChords = equalChordNames.join(', ');
+
+      // 15. Create an object of degrees number and chord notes
+      const degreesNotesObj = {};
+      chordFound[0].Intervals.forEach((key, i) => {
+        degreesNotesObj[key] = foundChordNotes[i];
+      });   
+
+      // now join that as a string and push to an array to output as a string
+      const degreesNotesStr = [];
+      Object.keys(degreesNotesObj).forEach((item, i) => {
+        if (item.includes('1') && i === 0) {
+          item = item.replace('1', 'R')
+        }
+        degreesNotesStr.push(`${item} = ${Object.values(degreesNotesObj)[i]}`)
+      })
+
+      // 16. Get chord tendency and chord intervals then join
+      const chordIntervalsString = chordFound[0].Intervals.join('-');
+      const chordTendency = chordFound[0].Tendency.join(', ').split(' ').join(' ');
+
+      break;
+    }
   }
 }
 
