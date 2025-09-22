@@ -209,4 +209,6 @@ fretsForm.addEventListener('submit', function (e) {
   getChordName();
 
   document.querySelector('h2').scrollIntoView({ behavior: 'smooth' });
+
+  this.reset();
 });
