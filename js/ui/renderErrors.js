@@ -4,7 +4,7 @@ const errorOutput = document.getElementById("error-output");
 export function notEnoughNotesError(notes) {
     errorOutput.classList.add('show');
 
-    const errorMsg = "That is not a chord. Enter at least 3 unique chord tones or check your sharp/flat selection.";
+    const errorMsg = "That is not a chord. Enter at least 3 unique chord tones.";
     const userNotes = notes.join('-')
 
     errorOutput.innerText = `⚠️  Your notes: ${userNotes}. ${errorMsg}`;
@@ -14,7 +14,7 @@ export function notEnoughNotesError(notes) {
 export function noMatchError(notes) {
   errorOutput.classList.add('show');
 
-  const errorMsg = "That is not a valid chord or it is not in our database. Check the tuning and/or sharp/flat key radio buttons.";
+  const errorMsg = "That is not a valid chord or it is not in our database. Check the tuning or the sharp/flat key radio buttons in the settings form.";
   const userNotes = notes.join("-");
 
   errorOutput.innerText = `⚠️  Your notes: ${userNotes}. ${errorMsg}`

@@ -79,3 +79,27 @@ export function createScaleDegreesCard(str, arr) {
   card.append(degreesOl) 
   results.append(card)
 }
+
+// Function to create the interval: notes card
+export function createDegreesNotesCard(arr) {
+  const card = document.createElement('div');
+  card.className = 'card degrees-notes';
+
+  const degreesTitle = document.createElement('h3');
+  degreesTitle.append(document.createTextNode('Degrees & notes:'))
+  card.append(degreesTitle)
+
+  const ul = document.createElement('ul');
+  ul.className = 'degrees-notes-list';
+
+  arr.forEach(item => {
+    const li = document.createElement('li');
+    const liText = document.createTextNode(item);
+
+    li.append(liText);
+    ul.append(li)
+  });
+
+  card.append(ul) 
+  results.append(card)
+}

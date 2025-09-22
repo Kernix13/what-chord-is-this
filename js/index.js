@@ -1,14 +1,13 @@
 "use strict"
 
 import { onFirstVisit, onInstrumentChange, onTuningChange, onKeyChange, toggleSettingsForm } from "./ui/eventHandlers.js";
-import { resetAllData } from "./ui/renderResults.js";
+import { resetAllData, createTitleCard, createCard, createScaleDegreesCard, createDegreesNotesCard } from "./ui/renderResults.js";
 import { buildUserStrings } from "./modules/buildUserStrings.js";
 import { getUserNotes } from "./modules/getUserNotes.js";
 import { getLocalStorage } from "./utils/storage.js";
 import { SHARPS, FLATS } from "./data/constants.js";
 import fixEnharmonics from "./modules/fixEnharmonics.js";
 import { chordFound } from "./modules/searchForChordMatch.js";
-import { createTitleCard, createCard, createScaleDegreesCard } from "./ui/renderResults.js";
 import { notEnoughNotesError, noMatchError } from "./ui/renderErrors.js";
 
 /* Get DOM elements */
@@ -127,6 +126,7 @@ function getChordName() {
         }
         degreesNotesStr.push(`${item} = ${Object.values(degreesNotesObj)[i]}`)
       })
+      console.log('degreesNotesStr', degreesNotesStr)
 
       // 16. Get chord tendency and chord intervals then join
       const chordIntervalsString = chordFound[0].Intervals.join('-');
@@ -136,13 +136,14 @@ function getChordName() {
       createTitleCard(slashChordName)
 
       // 18. Create cards for 5 other pieces of information
-      /* I think showing the user notes in their order is redundant
-      */
+      /* I think showing the user notes in their order is redundant */
       createCard('user-notes', ['Your notes: ', userNotes]);
       createCard('chord-notes', ['Chord notes: ', chordNotes]);
       createCard('equal-chords', ['Equal chord(s): ', equalChords]);
       createCard('tendency', ['Chord tendency: ', chordTendency]);
       createCard('intervals', ['Chord degrees: ', chordIntervalsString]);
+      
+      createDegreesNotesCard(degreesNotesStr);
 
       // 19. Get scale degrees for the chord
       createScaleDegreesCard(chordName, chordFound[0]['scales']);
@@ -203,7 +204,7 @@ fretsForm.addEventListener('submit', function (e) {
 
   getChordName();
 
-  document.querySelector('h2').scrollIntoView({ behavior: 'smooth' });
+  document.querySelector('#title-chord').scrollIntoView({ behavior: 'smooth' });
 
   this.reset();
 });
