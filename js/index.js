@@ -1,10 +1,6 @@
 "use strict"
 
-import { onFirstVisit, 
-  toggleSettingsForm, 
-  onInstrumentChange, 
-  onTuningChange, 
-  onKeyChange } from "./ui/eventHandlers.js";
+import { onFirstVisit, onInstrumentChange, onTuningChange, onKeyChange, toggleSettingsForm } from "./ui/eventHandlers.js";
 import { resetAllData } from "./ui/renderResults.js";
 import { buildUserStrings } from "./modules/buildUserStrings.js";
 import { getUserNotes } from "./modules/getUserNotes.js";
@@ -12,21 +8,20 @@ import { getLocalStorage } from "./utils/storage.js";
 import { SHARPS, FLATS } from "./data/constants.js";
 import fixEnharmonics from "./modules/fixEnharmonics.js";
 import { chordFound } from "./modules/searchForChordMatch.js";
-import { createCard, createScaleDegreesCard, createTitleCard } from "./ui/renderResults.js";
+import { createTitleCard, createCard, createScaleDegreesCard } from "./ui/renderResults.js";
 import { notEnoughNotesError, noMatchError } from "./ui/renderErrors.js";
 
 /* Get DOM elements */
-// Settings form
 const instruments = document.getElementById('instruments');
 const tuningsSelect = document.getElementById('tunings-select');
 const keys = document.querySelectorAll('#key input');
-// Settings Button
-const settingsBtn = document.getElementById('settings-btn');
-// Frets form
+
 const fretsForm = document.getElementById('frets-form');
 const pageReset = document.getElementById('page-reset');
 
-// 1 Global variable 
+const settingsBtn = document.getElementById('settings-btn');
+
+// 1 Global variable, pushed to in getUserNotes
 const userFretNotes = [];
 
 // The main function called in the fretsForm event listener

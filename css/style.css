@@ -171,7 +171,7 @@ input[type="number"] {
 .frets-form {
   border: 2px solid hsl(212, 75%, 90%);
   padding: 0.75rem 0;
-  border-radius: 0.375rem;;
+  border-radius: 0.375rem;
 }
 
 .strings,
@@ -197,9 +197,10 @@ input[type="number"] {
 /* Output cards */
 .title-card {
   margin-bottom: 2rem;
-  padding: 1rem 0.5rem;
+  padding: 2rem 0.5rem;
   text-align: center;
-  border: 1px solid rgb(255, 182, 155);
+  border: 3px solid hsl(212, 75%, 82%);
+  border-radius: 0.375rem;
 }
 
 
@@ -210,8 +211,9 @@ input[type="number"] {
 }
 
 .card {
-  border: 1px solid rgb(255, 182, 155);
+  border: 2px solid hsl(212, 75%, 90%);
   padding: 1rem 0.5rem 0.5rem;
+  border-radius: 0.375rem;
 }
 
 .degrees-notes ul li {
