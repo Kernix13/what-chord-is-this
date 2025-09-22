@@ -1,15 +1,13 @@
 import { getLocalStorage } from "../utils/storage.js"
 import { allUserStrings } from "./buildUserStrings.js";
 
-const userFretNumbers = [];
-
 /**  
 * STEP 2 convert each fret number into a note based on the 
 * 12-note chromatic arrays from buildUserStrings 
 * getUserNotes(userFretNotes)
 */
 export function getUserNotes(arr) {
-  
+  const userFretNumbers = [];
   const savedSettings = getLocalStorage();
   const currentUserStrings = savedSettings.strings;
   
