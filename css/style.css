@@ -211,7 +211,8 @@ input[type="number"] {
 }
 
 .card {
-  border: 2px solid hsl(212, 75%, 90%);
+  border-top: 2px solid hsl(212, 75%, 90%);
+  border-left: 2px solid hsl(212, 75%, 90%);
   padding: 1rem 0.5rem 0.5rem;
   border-radius: 0.375rem;
 }

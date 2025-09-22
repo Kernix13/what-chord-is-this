@@ -114,19 +114,18 @@ function getChordName() {
 
       // 15. Create an object of degrees number and chord notes
       const degreesNotesObj = {};
-      chordFound[0].Intervals.forEach((key, i) => {
-        degreesNotesObj[key] = foundChordNotes[i];
+      foundChordNotes.forEach((key, i) => {
+        degreesNotesObj[key] = chordFound[0].Intervals[i];
       });   
 
       // now join that as a string and push to an array to output as a string
       const degreesNotesStr = [];
-      Object.keys(degreesNotesObj).forEach((item, i) => {
+      Object.values(degreesNotesObj).forEach((item, i) => {
         if (item.includes('1') && i === 0) {
           item = item.replace('1', 'R')
         }
-        degreesNotesStr.push(`${item} = ${Object.values(degreesNotesObj)[i]}`)
+        degreesNotesStr.push(`${item} = ${Object.keys(degreesNotesObj)[i]}`)
       })
-      console.log('degreesNotesStr', degreesNotesStr)
 
       // 16. Get chord tendency and chord intervals then join
       const chordIntervalsString = chordFound[0].Intervals.join('-');
