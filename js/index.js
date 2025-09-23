@@ -32,7 +32,7 @@ function getChordName() {
   // 2. Get user fret #'s and convert fret #'s into note values
   getUserNotes(userFretNotes);
 
-  // 3. Remove duplicate user notes
+  // 3. Remove duplicate user notes  
   let uniqueUserNotes = [];
   uniqueUserNotes = userFretNotes.filter(tone => {
     return !uniqueUserNotes.includes(tone) && tone !== undefined 
