@@ -134,28 +134,28 @@ function getChordName() {
       // 17. Create the card for the h2 title and the found chord name
       createTitleCard(slashChordName)
 
-      // 18. Create cards for 5 other pieces of information
-      /* I think showing the user notes in their order is redundant */
+      // 18. Create cards for 5 basic chord information
       createCard('user-notes', ['Your notes: ', userNotes]);
       createCard('chord-notes', ['Chord notes: ', chordNotes]);
       createCard('equal-chords', ['Equal chord(s): ', equalChords]);
       createCard('tendency', ['Chord tendency: ', chordTendency]);
       createCard('intervals', ['Chord degrees: ', chordIntervalsString]);
       
+      // 19. Create the card for the degrees and notes
       createDegreesNotesCard(degreesNotesStr);
 
-      // 19. Get scale degrees for the chord
+      // 20. Get scale degrees for the chord
       createScaleDegreesCard(chordName, chordFound[0]['scales']);
 
       break;
     } else {
-      // Error message 1 for less than 3 unique notes
+      // Error message 1: less than 3 unique notes
       if (uniqueUserNotes.length < 3) {
         notEnoughNotesError(uniqueUserNotes);
       }
     }
   } 
-  // Error message 2 if no matching chord in chord-intervals.js
+  // Error message 2: if no matching chord in chord-intervals.js
   if (intervalsForUniqueNotes.length >= 3 && chordFound.length === 0) {
     noMatchError(uniqueUserNotes);
   }
