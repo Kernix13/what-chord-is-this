@@ -33,12 +33,7 @@ function getChordName() {
   getUserNotes(userFretNotes);
 
   // 3. Remove duplicate user notes  
-  let uniqueUserNotes = [];
-  uniqueUserNotes = userFretNotes.filter(tone => {
-    return !uniqueUserNotes.includes(tone) && tone !== undefined 
-      ? uniqueUserNotes.push(tone) 
-      : null;
-  });
+  const uniqueUserNotes = [...new Set(userFretNotes.filter(Boolean))];
 
   let scaleFromUniqueNote = [];
   let intervalsForUniqueNotes;
@@ -61,8 +56,9 @@ function getChordName() {
     }
 
     // 5. Convert unique user notes to intervals
-    intervalsForUniqueNotes = [];
-    uniqueUserNotes.forEach(note => intervalsForUniqueNotes.push(scaleFromUniqueNote.indexOf(note)));
+    intervalsForUniqueNotes = uniqueUserNotes.map(note =>
+      scaleFromUniqueNote.indexOf(note)
+    );
   
     // 6. Create an object: key = note interval, value = note
     const intervalsAndNotes = {};
@@ -81,13 +77,10 @@ function getChordName() {
       const userNotes = uniqueUserNotes.join('-');
 
       // 12. Put the chord notes in "proper" order then join
-      const foundChordNotes = [];
-      let chordNotes = '';
-
-      chordFound[0].steps.forEach(note => {
-        foundChordNotes.push(intervalsAndNotes[note]);
-      });
-      chordNotes = foundChordNotes.join('-');
+      const foundChordNotes = chordFound[0].steps.map(
+        note => intervalsAndNotes[note]
+      );
+      const chordNotes = foundChordNotes.join('-');
       
       // 12. Create slash chords for "short" names, or set slashChordName to = the normal name - skip if the chord name is >= 7 characters
       let slashChordName = '';
@@ -102,13 +95,13 @@ function getChordName() {
       const chordName = userNote + chordFound[0].Chord;
 
       // 14. Get "Equal Chords" if chordFound has that property then join
-      const equalChordNames = [];
+      let equalChordNames = [];
       if (chordFound[0].hasOwnProperty('Equal Chords')) {
-        chordFound[0]['Equal Chords'].forEach(equal => {
-          equalChordNames.push(scaleFromUniqueNote[equal['key']] + equal['name']);
-        });
+        equalChordNames = chordFound[0]['Equal Chords'].map(equal =>
+          scaleFromUniqueNote[equal.key] + equal.name
+        );
       } else {
-        equalChordNames.push(['Unique']);
+        equalChordNames = ['Unique'];
       }
       const equalChords = equalChordNames.join(', ');
 
@@ -119,13 +112,13 @@ function getChordName() {
       });   
 
       // now join that as a string and push to an array to output as a string
-      const degreesNotesStr = [];
-      Object.values(degreesNotesObj).forEach((item, i) => {
+      const keys = Object.keys(degreesNotesObj);
+      const degreesNotesStr = Object.values(degreesNotesObj).map((item, i) => {
         if (item.includes('1') && i === 0) {
-          item = item.replace('1', 'R')
+          item = item.replace('1', 'R');
         }
-        degreesNotesStr.push(`${item} = ${Object.keys(degreesNotesObj)[i]}`)
-      })
+        return `${item} = ${keys[i]}`;
+      });
 
       // 16. Get chord tendency and chord intervals then join
       const chordIntervalsString = chordFound[0].Intervals.join('-');
