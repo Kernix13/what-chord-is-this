@@ -5,12 +5,15 @@ export const chordFound = [];
 // 9. Check for matching chord in chord-intervals.js: {} = chordIntervals
 // arr = intervalsForUniqueNotes
 export function searchForChordMatch(arr) {
-  chordIntervals.forEach(chord => {
-    const hasMatchingIntervals = arr.every(interval => chord.steps.includes(interval));
-    
-    if (arr.length === chord.steps.length && hasMatchingIntervals) {
-      chordFound.push(chord);
-    }
-  });
-  // return chordFound; // does this do anything?
+  // clear previous matches first
+  chordFound.length = 0;
+
+  // Filter all chordIntervals to find matches, then push them all at once
+  const matches = chordIntervals.filter(chord =>
+    arr.length === chord.steps.length &&
+    arr.every(interval => chord.steps.includes(interval))
+  );
+
+  // Populate the shared array
+  chordFound.push(...matches);
 }

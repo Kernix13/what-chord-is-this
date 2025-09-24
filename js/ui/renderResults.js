@@ -2,10 +2,11 @@ const titleChord = document.getElementById('title-chord');
 const results = document.getElementById('results');
 
 // Reset the page and the variables so user can enter another chord
-export function resetAllData(arr, arr2) {
-  arr.length = 0;
-  arr2.length = 0;
+export function resetAllData(...arrays) {
+  // Clear all arrays passed in
+  arrays.forEach(arr => arr.length = 0);
 
+  // Reset UI
   titleChord.innerText = '';
   results.innerText = '';
 
