@@ -95,14 +95,11 @@ function getChordName() {
       const chordName = userNote + chordFound[0].Chord;
 
       // 14. Get "Equal Chords" if chordFound has that property then join
-      let equalChordNames = [];
-      if (chordFound[0].hasOwnProperty('Equal Chords')) {
-        equalChordNames = chordFound[0]['Equal Chords'].map(equal =>
-          scaleFromUniqueNote[equal.key] + equal.name
-        );
-      } else {
-        equalChordNames = ['Unique'];
-      }
+      const equalChordNames = chordFound[0]['Equal Chords']
+        ? chordFound[0]['Equal Chords'].map(
+            equal => scaleFromUniqueNote[equal.key] + equal.name
+          )
+        : ['Unique'];
       const equalChords = equalChordNames.join(', ');
 
       // 15. Create an object of degrees number and chord notes
