@@ -181,7 +181,7 @@ keys.forEach((key) => {
 
 // Reset number inputs, and remove chord search results from DOM 
 pageReset.addEventListener('click', () => {
-  resetAllData(userFretNotes, chordFound);
+  resetAllData(chordFound);
   document.querySelector('h1').scrollIntoView({ behavior: 'smooth' });
 });
 
@@ -193,6 +193,4 @@ fretsForm.addEventListener('submit', function (e) {
   getChordName();
 
   document.querySelector('#title-chord').scrollIntoView({ behavior: 'smooth' });
-
-  this.reset();
 });
