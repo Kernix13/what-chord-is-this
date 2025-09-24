@@ -136,7 +136,7 @@ input[type="number"] {
   font-size: 1.125rem;
   position: absolute;
   top: 1rem;
-  left: 0;
+  left: 1rem;
   min-width: 8.5rem;
 }
 
