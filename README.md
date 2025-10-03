@@ -97,7 +97,7 @@ The project is organized as follows:
 ```
 ├── .gitignore
 ├── CHANGELOG.md                    # Project version history and changes
-├── README.md                       #
+├── README.md
 ├── index.html                      # Main HTML page
 ├── css/
 │   └── style.css                   # Main stylesheet
