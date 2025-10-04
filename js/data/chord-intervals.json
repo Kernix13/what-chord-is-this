@@ -38,6 +38,9 @@
     "Intervals": ["1", "3", "5", "9"],
     "steps": [0, 4, 7, 2],
     "Tendency": ["I", "V"],
+    "Equal Chords": [
+      { "key": 7, "name": "6 sus" }
+    ],
     "scales": [
       { "Major Scale": ["1st", " 4th", " 5th"] },
       { "Minor Pentatonic": ["2nd"] },
@@ -81,7 +84,7 @@
     "Tendency": ["I", "V"],
     "Equal Chords": [
       { "key": 2, "name": "9sus" },
-      { "key": 7, "name": "6sus add9" },
+      { "key": 7, "name": "6 sus add9" },
       { "key": 9, "name": "m11" }
     ],
     "scales": [
@@ -1152,7 +1155,7 @@
     "Equal Chords": [
       { "key": 3, "name": "6 add9" },
       { "key": 5, "name": "9sus" },
-      { "key": 10, "name": "6sus add9" }
+      { "key": 10, "name": "6 sus add9" }
     ],
     "scales": [
       { "Major Scale": ["2nd", " 3rd", " 6th"] }, 
@@ -1229,13 +1232,205 @@
     ]
   },
   {
-    "Chord": "",
-    "Intervals": [],
-    "steps": [],
-    "Tendency": [],
-    "Equal Chords": [{ "key": 9, "name": "m7" }],
+    "Chord": "sus2",
+    "Intervals": ["1", "2", "5"],
+    "steps": [0, 2, 7],
+    "Tendency": ["I", "V"],
+    "Equal Chords": [{ "key": 7, "name": "sus" }],
     "scales": [
-      { "Major Scale": [] }
+      { "Major Scale": ["1st", " 2nd", " 4th", " 5th", " 6th"] }, 
+      { "Minor Pentatonic": ["2nd", " 3rd"] }, 
+      { "Blues Scale": ["2nd", " 3rd"] }, 
+      { "Harmonic Minor": ["1st", " 4th"] }, 
+      { "Melodic Minor": ["1st", " 4th", " 5th"] }, 
+      { "Major Bebop": ["1st", " 2nd", " 4th", " 5th", "7th"] }, 
+      { "Minor Bebop": ["1st", " 2nd", "3rd", " 5th", " 6th", " 8th"] }
+    ]
+  },
+  {
+    "Chord": "sus",
+    "Intervals": ["1", "4", "5"],
+    "steps": [0, 5, 7],
+    "Tendency": ["I", "IV"],
+    "Equal Chords": [{ "key": 5, "name": "sus2" }],
+    "scales": [
+      { "Major Scale": ["1st", " 2nd", "3rd", " 5th", " 6th"] }, 
+      { "Minor Pentatonic": ["3rd", " 5th"] }, 
+      { "Blues Scale": ["3rd", " 6th"] }, 
+      { "Harmonic Minor": ["1st", " 5th"] }, 
+      { "Melodic Minor": ["1st", " 2nd", " 5th"] }, 
+      { "Major Bebop": ["1st", " 2nd", " 3rd", " 5th", "7th"] }, 
+      { "Minor Bebop": ["1st", " 2nd", " 5th", " 6th", " 7th", " 8th"] }
+    ]
+  },
+  {
+    "Chord": "sus add9",
+    "Intervals": ["1", "4", "5", "9"],
+    "steps": [0, 5, 7, 2],
+    "Tendency": ["I", "IV"],
+    "Equal Chords": [{ "key": 7, "name": "7sus" }],
+    "scales": [
+      { "Major Scale": ["1st", " 2nd", " 5th", " 6th"] }, 
+      { "Minor Pentatonic": ["3rd", " 5th"] }, 
+      { "Blues Scale": ["3rd", " 6th"] }, 
+      { "Harmonic Minor": ["1st"] }, 
+      { "Melodic Minor": ["1st"] }, 
+      { "Major Bebop": ["1st", " 2nd", " 5th", "7th"] }, 
+      { "Minor Bebop": ["1st", " 2nd", " 5th", " 6th", " 8th"] }
+    ]
+  },
+  {
+    "Chord": "6 sus",
+    "Intervals": ["1", "4", "5", "6"],
+    "steps": [0, 5, 7, 9],
+    "Tendency": ["I", "IV"],
+    "Equal Chords": [
+      { "key": 5, "name": " add9" }
+    ],
+    "scales": [
+      { "Major Scale": ["1st", " 2nd", " 5th"] }, 
+      { "Minor Pentatonic": ["5th"] }, 
+      { "Blues Scale": ["6th"] }, 
+      { "Melodic Minor": ["1st", " 2nd"] }, 
+      { "Major Bebop": ["1st", " 2nd", " 5th"] }, 
+      { "Minor Bebop": ["1st", " 5th", " 6th", "8th"] }
+    ]
+  },
+  {
+    "Chord": "6 sus add9",
+    "Intervals": ["1", "4", "5", "6", "9"],
+    "steps": [0, 5, 7, 9, 2],
+    "Tendency": ["I", "IV"],
+    "Equal Chords": [
+      { "key": 2, "name": "m11" },
+      { "key": 5, "name": "6 add9" },
+      { "key": 7, "name": "9sus" }
+    ],
+    "scales": [
+      { "Major Scale": ["1st", " 2nd", " 5th"] }, 
+      { "Minor Pentatonic": ["5th"] }, 
+      { "Blues Scale": ["6th"] }, 
+      { "Melodic Minor": ["1st"] }, 
+      { "Major Bebop": ["1st", " 2nd", " 5th"] }, 
+      { "Minor Bebop": ["1st", " 5th", " 6th", "8th"] }
+    ]
+  },
+  {
+    "Chord": "7sus2",
+    "Intervals": ["1", "2", "5", "♭7"],
+    "steps": [0, 2, 7, 10],
+    "Tendency": ["IV", "♭VII"],
+    "Equal Chords": [{ "key": 7, "name": "m add11" }],
+    "scales": [
+      { "Major Scale": ["2nd", " 5th", " 6th"] }, 
+      { "Minor Pentatonic": ["3rd"] }, 
+      { "Blues Scale": ["3rd"] }, 
+      { "Harmonic Minor": ["4th"] }, 
+      { "Melodic Minor": ["4th", " 5th"] }, 
+      { "Major Bebop": ["2nd", " 5th", "7th"] }, 
+      { "Minor Bebop": ["1st", " 2nd", " 5th", " 6th"] }
+    ]
+  },
+  {
+    "Chord": "7sus",
+    "Intervals": ["1", "4", "5", "♭7"],
+    "steps": [0, 5, 7, 10],
+    "Tendency": ["I", "IV", "V"],
+    "Equal Chords": [{ "key": 5, "name": "sus add9" }],
+    "scales": [
+      { "Major Scale": ["2nd", " 3rd", " 5th", " 6th"] }, 
+      { "Minor Pentatonic": ["3rd"] }, 
+      { "Blues Scale": ["3rd"] }, 
+      { "Harmonic Minor": ["5th"] }, 
+      { "Melodic Minor": ["2nd", " 5th"] }, 
+      { "Major Bebop": ["2nd", " 3rd", " 5th", "7th"] }, 
+      { "Minor Bebop": ["1st", " 2nd", " 5th", " 6th", " 7th"] }
+    ]
+  },
+  {
+    "Chord": "7sus ♭9",
+    "Intervals": ["1", "4", "5", "♭7", "♭9"],
+    "steps": [0, 5, 7, 10, 1],
+    "Tendency": ["♭II", "II", "IV", "V", "♭VI", "VI", "VII"],
+    "Equal Chords": [
+      { "key": 7, "name": "m11♭5" },
+      { "key": 10, "name": "m6 add9" }
+    ],
+    "scales": [
+      { "Major Scale": ["3rd"] }, 
+      { "Blues Scale": ["3rd"] }, 
+      { "Harmonic Minor": ["5th"] }, 
+      { "Melodic Minor": ["2nd"] }, 
+      { "Major Bebop": ["3rd"] }, 
+      { "Minor Bebop": ["2nd", " 7th"] }
+    ]
+  },
+  {
+    "Chord": "9sus",
+    "Intervals": ["1", "4", "5", "♭7", "9"],
+    "steps": [0, 5, 7, 10, 2],
+    "Tendency": ["I", "♭III", "IV", "V"],
+    "Equal Chords": [
+      { "key": 5, "name": "6 sus add9" },
+      { "key": 7, "name": "m11" },
+      { "key": 10, "name": "6 add9" }
+    ],
+    "scales": [
+      { "Major Scale": ["2nd", " 5th", " 6th"] }, 
+      { "Minor Pentatonic": ["3rd"] }, 
+      { "Blues Scale": ["3rd"] }, 
+      { "Melodic Minor": ["5th"] }, 
+      { "Major Bebop": ["2nd", " 5th", "7th"] }, 
+      { "Minor Bebop": ["1st", " 2nd", " 5th", " 6th"] }
+    ]
+  },
+  {
+    "Chord": "13sus",
+    "Intervals": ["1", "4", "5", "♭7", "13"],
+    "steps": [0, 5, 7, 10, 9],
+    "Tendency": ["I", "IV"],
+    "Equal Chords": [{ "key": 5, "name": "add9/11" }],
+    "scales": [
+      { "Major Scale": ["2nd", " 5th"] }, 
+      { "Major Bebop": ["2nd", " 5th"] }, 
+      { "Minor Bebop": ["1st", " 5th", " 6th"] }
+    ]
+  },
+  {
+    "Chord": "13sus ♭9",
+    "Intervals": ["1", "4", "5", "♭7", "13", "♭9"],
+    "steps": [0, 5, 7, 10, 9, 1],
+    "Tendency": ["♭II", "II", "IV", "V", "♭VI", "VI", "VII"],
+    "Equal Chords": [{ "key": 9, "name": "7♯5♭9/♯9" }],
+    "scales": [{ "Melodic Minor": ["2nd"] }]
+  },
+  {
+    "Chord": "maj7 sus",
+    "Intervals": ["1", "4", "5", "7"],
+    "steps": [0, 5, 7, 11],
+    "Tendency": ["I", "V"],
+    "scales": [
+      { "Major Scale": ["1st"] }, 
+      { "Harmonic Minor": ["1st"] }, 
+      { "Melodic Minor": ["1st"] }, 
+      { "Major Bebop": ["1st", " 7th"] }, 
+      { "Minor Bebop": ["5th", " 8th"] }
+    ]
+  },
+  {
+    "Chord": "maj13 sus",
+    "Intervals": ["1", "4", "5", "7", "13"],
+    "steps": [0, 5, 7, 11, 13],
+    "Tendency": ["I", "V"],
+    "Equal Chords": [
+      { "key": 5, "name": " add9/♯11" },
+      { "key": 7, "name": "9/11 N5" }
+    ],
+    "scales": [
+      { "Major Scale": ["1st"] }, 
+      { "Melodic Minor": ["1st"] }, 
+      { "Major Bebop": ["1st"] }, 
+      { "Minor Bebop": ["5th", " 8th"] }
     ]
   },
   {

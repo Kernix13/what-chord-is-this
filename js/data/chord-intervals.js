@@ -53,6 +53,10 @@ export const chordIntervals = [
     Intervals: ["1", "3", "5", "9"],
     steps: [0, 4, 7, 2],
     Tendency: ["I", "V"],
+    Tendency: ["I", "V"],
+    "Equal Chords": [
+      { key: 7, name: "6 sus" }
+    ],
     scales: [
       { "Major Scale": ["1st", " 4th", " 5th"] }, 
       { "Minor Pentatonic": ["2nd"] }, 
@@ -96,7 +100,7 @@ export const chordIntervals = [
     Tendency: ["I", "V"],
     "Equal Chords": [
       { key: 2, name: "9sus" },
-      { key: 7, name: "6sus add9" },
+      { key: 7, name: "6 sus add9" },
       { key: 9, name: "m11" }
     ],
     scales: [
@@ -1001,7 +1005,7 @@ export const chordIntervals = [
     "Equal Chords": [
       { key: 3, name: "6 add9" },
       { key: 5, name: "9sus" },
-      { key: 10, name: "6sus add9" }
+      { key: 10, name: "6 sus add9" }
     ],
     scales: [{ "Major Scale": ["2nd", " 3rd", " 6th"] }, { "Minor Pentatonic": ["1st"] }, { "Blues Scale": ["1st"] }, { "Melodic Minor": ["2nd"] }, { "Major Bebop": ["2nd", " 3rd", " 6th"] }, { "Minor Bebop": ["1st", " 2nd", " 6th", " 7th"] }]
   },
@@ -1055,7 +1059,7 @@ export const chordIntervals = [
     steps: [0, 5, 7],
     Tendency: ["I", "IV"],
     "Equal Chords": [{ key: 5, name: "sus2" }],
-    scales: [{ "Major Scale": ["1st", " 2nd", "3rd", " 5th", " 6th"] }, { "Minor Pentatonic": ["3rd", " 5th"] }, { "Blues Scale": ["3rd", " 6th"] }, { "Harmonic Minor": ["1st", " 5th"] }, { "Melodic Minor": ["1st", " 2nd", " 5th"] }, { "Major Bebop": ["1st", " 2nd", " 3rd", " 5th", "7th"] }, { "Minor Bebop": ["1st", " 2nd", " 5th", " 6th", " 7th", " 8th"] }]
+    scales: [{ "Major Scale": ["1st", " 2nd", " 3rd", " 5th", " 6th"] }, { "Minor Pentatonic": ["3rd", " 5th"] }, { "Blues Scale": ["3rd", " 6th"] }, { "Harmonic Minor": ["1st", " 5th"] }, { "Melodic Minor": ["1st", " 2nd", " 5th"] }, { "Major Bebop": ["1st", " 2nd", " 3rd", " 5th", "7th"] }, { "Minor Bebop": ["1st", " 2nd", " 5th", " 6th", " 7th", " 8th"] }]
   },
   {
     Chord: "sus add9",
@@ -1066,7 +1070,24 @@ export const chordIntervals = [
     scales: [{ "Major Scale": ["1st", " 2nd", " 5th", " 6th"] }, { "Minor Pentatonic": ["3rd", " 5th"] }, { "Blues Scale": ["3rd", " 6th"] }, { "Harmonic Minor": ["1st"] }, { "Melodic Minor": ["1st"] }, { "Major Bebop": ["1st", " 2nd", " 5th", "7th"] }, { "Minor Bebop": ["1st", " 2nd", " 5th", " 6th", " 8th"] }]
   },
   {
-    Chord: "6sus add9",
+    Chord: "6 sus",
+    Intervals: ["1", "4", "5", "6"],
+    steps: [0, 5, 7, 9],
+    Tendency: ["I", "IV"],
+    "Equal Chords": [
+      { key: 5, name: " add9" }
+    ],
+    scales: [
+      { "Major Scale": ["1st", " 2nd", " 5th"] }, 
+      { "Minor Pentatonic": ["5th"] }, 
+      { "Blues Scale": ["6th"] }, 
+      { "Melodic Minor": ["1st", " 2nd"] }, 
+      { "Major Bebop": ["1st", " 2nd", " 5th"] }, 
+      { "Minor Bebop": ["1st", " 5th", " 6th", "8th"] }
+    ]
+  },
+  {
+    Chord: "6 sus add9",
     Intervals: ["1", "4", "5", "6", "9"],
     steps: [0, 5, 7, 9, 2],
     Tendency: ["I", "IV"],
@@ -1075,7 +1096,14 @@ export const chordIntervals = [
       { key: 5, name: "6 add9" },
       { key: 7, name: "9sus" }
     ],
-    scales: [{ "Major Scale": ["1st", " 2nd", " 5th"] }, { "Minor Pentatonic": ["5th"] }, { "Blues Scale": ["6th"] }, { "Melodic Minor": ["1st"] }, { "Major Bebop": ["1st", " 2nd", " 5th"] }, { "Minor Bebop": ["1st", " 5th", " 6th", "8th"] }]
+    scales: [
+      { "Major Scale": ["1st", " 2nd", " 5th"] }, 
+      { "Minor Pentatonic": ["5th"] }, 
+      { "Blues Scale": ["6th"] }, 
+      { "Melodic Minor": ["1st"] }, 
+      { "Major Bebop": ["1st", " 2nd", " 5th"] }, 
+      { "Minor Bebop": ["1st", " 5th", " 6th", "8th"] }
+    ]
   },
   {
     Chord: "7sus2",
@@ -1110,7 +1138,7 @@ export const chordIntervals = [
     steps: [0, 5, 7, 10, 2],
     Tendency: ["I", "♭III", "IV", "V"],
     "Equal Chords": [
-      { key: 5, name: "6sus add9" },
+      { key: 5, name: "6 sus add9" },
       { key: 7, name: "m11" },
       { key: 10, name: "6 add9" }
     ],
