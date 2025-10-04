@@ -1655,23 +1655,225 @@
     ]
   },
   {
-    "Chord": "",
-    "Intervals": [],
-    "steps": [],
-    "Tendency": [],
-    "Equal Chords": [{ "key": 9, "name": "m7" }],
+    "Chord": "maj ♭5",
+    "Intervals": ["1", "3", "♭5"],
+    "steps": [0, 4, 6],
+    "Tendency": ["V"],
     "scales": [
-      { "Major Scale": [] }
+      { "Major Scale": ["4th"] }, 
+      { "Harmonic Minor": ["6th"] }, 
+      { "Melodic Minor": ["4th", "7th"] }, 
+      { "Whole Tone": ["1st", " 2nd", " 3rd", " 4th", " 5th", " 6th"] }, 
+      { "HW Diminished": ["1st", " 3rd", " 5th", " 7th"] }, 
+      { "Major Bebop": ["4th"] }, 
+      { "Minor Bebop": ["3rd", " 8th"] }
     ]
   },
   {
-    "Chord": "",
-    "Intervals": [],
-    "steps": [],
-    "Tendency": [],
-    "Equal Chords": [{ "key": 9, "name": "m7" }],
+    "Chord": "7♭5",
+    "Intervals": ["1", "3", "♭5", "♭7"],
+    "steps": [0, 4, 6, 10],
+    "Tendency": ["♭II", "IV", "V", "VII"],
+    "Equal Chords": [{ "key": 6, "name": "7♭5" }],
     "scales": [
-      { "Major Scale": [] }
+      { "Melodic Minor": ["4th", "7th"] }, 
+      { "Whole Tone": ["1st", " 2nd", " 3rd", " 4th", " 5th", " 6th"] }, 
+      { "HW Diminished": ["1st", " 3rd", " 5th", " 7th"] }
     ]
+  },
+  {
+    "Chord": "7♭5♭9",
+    "Intervals": ["1", "3", "♭5", "♭7", "♭9"],
+    "steps": [0, 4, 6, 10, 1],
+    "Tendency": ["♭II", "IV", "V", "VII"],
+    "Equal Chords": [{ "key": 6, "name": "7♯11" }],
+    "scales": [
+      { "Melodic Minor": ["7th"] }, 
+      { "HW Diminished": ["1st", " 3rd", " 5th", " 7th"] }
+    ]
+  },
+  {
+    "Chord": "maj ♭5 add ♭9",
+    "Intervals": ["1", "3", "♭5", "♭9"],
+    "steps": [0, 4, 6, 1],
+    "Tendency": ["♭II", "IV", "V", "VII"],
+    "Equal Chords": [{ "key": 6, "name": "7♯11" }],
+    "scales": [
+      { "Melodic Minor": ["7th"] }, 
+      { "HW Diminished": ["1st", " 3rd", " 5th", " 7th"] }
+    ]
+  },
+  {
+    "Chord": "7♭5♭9 N3",
+    "Intervals": ["1", "♭5", "♭7", "♭9"],
+    "steps": [0, 6, 10, 1],
+    "Tendency": ["♭II", "IV", "♭V", "♭VI"],
+    "Equal Chords": [{ "key": 6, "name": "add♯11" }],
+    "scales": [
+      { "Melodic Minor": ["7th"] }, 
+      { "HW Diminished": ["1st", " 3rd", " 5th", " 7th"] }
+    ]
+  },
+  {
+    "Chord": "7♭5♯9 NR",
+    "Intervals": ["3", "♭5", "♭7", "♯9"],
+    "steps": [4, 6, 10, 3],
+    "Tendency": ["IV"],
+    "Equal Chords": [{ "key": 6, "name": "13 N5" }],
+    "scales": [
+      { "Melodic Minor": ["7th"] }, 
+      { "HW Diminished": ["1st", " 3rd", " 5th", " 7th"] }
+    ]
+  },
+  {
+    "Chord": "7♭5♭9/♯9",
+    "Intervals": ["1", "3", "♭5", "♭7", "♭9", "♯9"],
+    "steps": [0, 4, 6, 10, 1, 3],
+    "Tendency": ["♭II", "IV", "♭V", "V", "♭VI", "VII"],
+    "Equal Chords": [{ "key": 6, "name": "13♯11" }],
+    "scales": [
+      { "Melodic Minor": ["7th"] }, 
+      { "HW Diminished": ["1st", " 3rd", " 5th", " 7th"] }
+    ]
+  },
+  {
+    "Chord": "7♭5♭13",
+    "Intervals": ["1", "3", "♭5", "♭7", "♭13"],
+    "steps": [0, 4, 6, 10, 8],
+    "Tendency": ["♭II", "IV", "V", "VII"],
+    "Equal Chords": [
+      { "key": 0, "name": "7♯5♯11" },
+      { "key": 6, "name": "9♭5" },
+      { "key": 8, "name": "9♯5" }
+    ],
+    "scales": [
+      { "Melodic Minor": ["7th"] }, 
+      { "Whole Tone": ["1st", " 2nd", " 3rd", " 4th", " 5th", " 6th"] }
+    ]
+  },
+  {
+    "Chord": "7♭5♭13 NR",
+    "Intervals": ["3", "♭5", "♭7", "♭13"],
+    "steps": [4, 6, 10, 8],
+    "Tendency": ["IV", "VII"],
+    "Equal Chords": [{ "key": 6, "name": "9 N5" }],
+    "scales": [
+      { "Melodic Minor": ["7th"] }, 
+      { "Whole Tone": ["1st", " 2nd", " 3rd", " 4th", " 5th", " 6th"] }
+    ]
+  },
+  {
+    "Chord": "9♭5",
+    "Intervals": ["1", "3", "♭5", "♭7", "9"],
+    "steps": [0, 4, 6, 10, 2],
+    "Tendency": ["All but I, III & ♭VI"],
+    "Equal Chords": [
+      { "key": 2, "name": "9♯5" },
+      { "key": 6, "name": "7♭5♭13" }
+    ],
+    "scales": [{ "Melodic Minor": ["4th"] }, { "Whole Tone": ["1st", " 2nd", " 3rd", " 4th", " 5th", " 6th"] }]
+  },
+  {
+    "Chord": "9♭5♭13",
+    "Intervals": ["1", "3", "♭5", "♭7", "9", "♭13"],
+    "steps": [0, 4, 6, 10, 2, 8],
+    "Tendency": ["Any key"],
+    "Equal Chords": [
+      { "key": 2, "name": "9♭5♭13" },
+      { "key": 4, "name": "9♭5♭13" },
+      { "key": 6, "name": "9♭5♭13" },
+      { "key": 8, "name": "9♭5♭13" }
+    ],
+    "scales": [{ "Whole Tone": ["1st", " 2nd", " 3rd", " 4th", " 5th", " 6th"] }]
+  },
+  {
+    "Chord": "13♭5",
+    "Intervals": ["1", "3", "♭5", "♭7", "13"],
+    "steps": [0, 4, 6, 10, 9],
+    "Tendency": ["♭II", "IV", "♭V", "V", "♭VII", "VII"],
+    "Equal Chords": [{ "key": 6, "name": "7♭5♯9" }],
+    "scales": [
+      { "Melodic Minor": ["4th"] }, 
+      { "HW Diminished": ["1st", " 3rd", " 5th", " 7th"] }
+    ]
+  },
+  {
+    "Chord": "13♭5 NR",
+    "Intervals": ["3", "♭5", "♭7", "13"],
+    "steps": [4, 6, 10, 9],
+    "Tendency": ["IV", "♭V", "♭VII", "VII"],
+    "Equal Chords": [{ "key": 6, "name": "7♯9 N5" }],
+    "scales": [
+      { "Melodic Minor": ["4th"] }, 
+      { "HW Diminished": ["1st", " 3rd", " 5th", " 7th"] }
+    ]
+  },
+  {
+    "Chord": "13♭5 N3",
+    "Intervals": ["1", "♭5", "♭7", "13"],
+    "steps": [0, 6, 10, 9],
+    "Tendency": ["♭II", "♭V", "V", "♭VII"],
+    "scales": [
+      { "Melodic Minor": ["4th"] }, 
+      { "HW Diminished": ["1st", " 3rd", " 5th", " 7th"] }
+    ]
+  },
+  {
+    "Chord": "13♭5♭9",
+    "Intervals": ["1", "3", "♭5", "♭7", "13", "♭9"],
+    "steps": [0, 4, 6, 10, 9, 1],
+    "Tendency": ["Any key"],
+    "Equal Chords": [{ "key": 6, "name": "7♯9♯11" }],
+    "scales": [{ "HW Diminished": ["1st", " 3rd", " 5th", " 7th"] }]
+  },
+  {
+    "Chord": "maj♭5 6 add ♭9",
+    "Intervals": ["1", "3", "♭5", "13", "♭9"],
+    "steps": [0, 4, 6, 9, 1],
+    "Tendency": ["Any key"],
+    "Equal Chords": [{ "key": 6, "name": "7♯9♯11" }],
+    "scales": [{ "HW Diminished": ["1st", " 3rd", " 5th", " 7th"] }]
+  },
+  {
+    "Chord": "13♭5♭9 N3",
+    "Intervals": ["1", "♭5", "♭7", "13", "♭9"],
+    "steps": [0, 6, 10, 9, 1],
+    "Tendency": ["All but I, IV, VI & VII"],
+    "scales": [{ "HW Diminished": ["1st", " 3rd", " 5th", " 7th"] }]
+  },
+  {
+    "Chord": "13♭5♯9",
+    "Intervals": ["1", "3", "♭5", "♭7", "13", "♯9"],
+    "steps": [0, 4, 6, 10, 9, 3],
+    "Tendency": ["Any key"],
+    "Equal Chords": [{ "key": 6, "name": "13♭5♯9" }],
+    "scales": [{ "HW Diminished": ["1st", " 3rd", " 5th", " 7th"] }]
+  },
+  {
+    "Chord": "maj♭5 6 add ♯9",
+    "Intervals": ["1", "3", "♭5", "13", "♯9"],
+    "steps": [0, 4, 6, 9, 3],
+    "Tendency": ["Any key"],
+    "Equal Chords": [{ "key": 6, "name": "13♭5♯9" }],
+    "scales": [{ "HW Diminished": ["1st", " 3rd", " 5th", " 7th"] }]
+  },
+  {
+    "Chord": "13♭5♯9 NR",
+    "Intervals": ["3", "♭5", "♭7", "13", "♯9"],
+    "steps": [4, 6, 10, 9, 3],
+    "Tendency": ["♭II", "IV", "♭V", "V", "♭VII", "VII"],
+    "Equal Chords": [{ "key": 6, "name": "13♯9 N5" }],
+    "scales": [{ "HW Diminished": ["1st", " 3rd", " 5th", " 7th"] }]
+  },
+  {
+    "Chord": "maj7♭5",
+    "Intervals": ["1", "3", "♭5", "7"],
+    "steps": [0, 4, 6, 11],
+    "Tendency": ["V"],
+    "Equal Chords": [
+      { "key": 9, "name": "m6 add9 NR" },
+      { "key": 10, "name": "7♯5♯9 NR" }
+    ],
+    "scales": [{ "Major Scale": ["4th"] }, { "Harmonic Minor": ["6th"] }, { "Major Bebop": ["4th"] }, { "Minor Bebop": ["3rd", " 8th"] }]
   }
 ]
