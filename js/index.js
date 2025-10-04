@@ -58,6 +58,7 @@ function getChordName() {
     intervalsForUniqueNotes = uniqueUserNotes.map(note =>
       scaleFromUniqueNote.indexOf(note)
     );
+    console.log('intervalsForUniqueNotes', intervalsForUniqueNotes)
   
     // 6. Create an object: key = note interval, value = note
     const intervalsAndNotes = {};
@@ -72,6 +73,12 @@ function getChordName() {
 
     // 10. Check for a matching chord and then perform all other steps 
     if (chordFound.length > 0) {
+
+      // Chromatic scale for the root note of chordFound
+      // Should I call fixEnharmonics here to "fix" the chromatic scale?
+      // E.g.: G6/D ['G', 'G♯', 'A', 'A♯', 'B', 'C', 'C♯', 'D', 'D♯', 'E', 'F', 'F♯']
+      // G♯ s\b A♭, A♯ s\b B♭, C♯ s\b D♭, D♯ is ok or maybe E♭
+      console.log('scaleFromUniqueNote', scaleFromUniqueNote)
       // 11. Join the users' notes
       const userNotes = uniqueUserNotes.join('-');
 
@@ -84,7 +91,7 @@ function getChordName() {
       // 12. Create slash chords for "short" names, or set slashChordName to = the normal name - skip if the chord name is >= 7 characters
       let slashChordName = '';
 
-      if (intervalsForUniqueNotes[0] !== 0 && chordFound[0].Chord.length < 4) {
+      if (intervalsForUniqueNotes[0] !== 0 && chordFound[0].Chord.length < 7) {
         slashChordName = `${userNote}${chordFound[0].Chord}/${intervalsAndNotes[intervalsForUniqueNotes[0]]}`;
       } else {
         slashChordName = userNote + chordFound[0].Chord;
