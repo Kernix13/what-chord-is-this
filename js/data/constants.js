@@ -67,7 +67,7 @@ export const FLAT_TUNINGS = [
 export const SCALES = [
   {
     "Major Scale": [ 
-      [[0, 2, 4, 5, 7, 9, 11], 'Ionian'], 
+      [[0, 2, 4, 5, 7, 9, 11], 'Major Scale'], 
       [[0, 2, 3, 5, 7, 9, 10], 'Dorian'], // D E F G A B C
       [[0, 1, 3, 5, 7, 8, 10], 'Phrygian'], // E F G A B C D
       [[0, 2, 4, 6, 7, 9, 11], 'Lydian'], // F G A B C D E
@@ -79,15 +79,15 @@ export const SCALES = [
       [[0, 3, 5, 7, 10], 'Minor Pentatonic'], // A C D E G
       [[0, 2, 4, 7, 9], 'Major Pentatonic'], // C D E G A
       [[0, 2, 5, 7, 10], '7sus Pentatonic'], // D E G A C
-      [[0, 3, 5, 8, 10], ''], // E G A C D
+      [[0, 3, 5, 8, 10], 'Mode 4'], // E G A C D
       [[0, 2, 5, 7, 9], 'sus add Pentatonic'], // G A C D E
     ],
     "Blues Scale": [
-      [[0, 3, 5, 6, 7, 10], 'Blues scale'], // A C D E♭ E G
-      [[0, 2, 3, 4, 7, 9], 'Country blues scale'], // C D E♭ E G A
+      [[0, 3, 5, 6, 7, 10], 'Blues Scale'], // A C D E♭ E G
+      [[0, 2, 3, 4, 7, 9], 'Country Blues Scale'], // C D E♭ E G A
       [[0, 1, 2, 5, 7, 10], 'Phrygian Hexatonic'], // D E♭ E G A C
       [[0, 1, 4, 6, 9, 10], 'Locrian Hexatonic'], // E♭ E G A C D
-      [[0, 3, 5, 8, 10, 11], ''], // E G A C D E♭
+      [[0, 3, 5, 8, 10, 11], 'Mode 5'], // E G A C D E♭
       [[0, 2, 5, 7, 8, 9], 'Sus add Hexatonic'], // G A C D E♭ E
     ],
     "Harmonic Minor": [
@@ -95,64 +95,49 @@ export const SCALES = [
       [[0, 1, 3, 5, 6, 9, 10], 'Locrian Natural 6'], // B C D E F G♯ A
       [[0, 2, 4, 5, 8, 9, 11], 'Ionian ♯5'], // C D E F G♯ A B
       [[0, 2, 3, 6, 7, 9, 10], 'Dorian ♯11'], // D E F G♯ A B C
-      [[0, 1, 4, 5, 7, 8, 10], 'Phrygian dominant'], // E F G♯ A B C D
+      [[0, 1, 4, 5, 7, 8, 10], 'Phrygian Dominant'], // E F G♯ A B C D
       [[0, 3, 4, 6, 7, 9, 11], 'Lydian ♯9'], // F G♯ A B C D E
-      [[0, 1, 3, 4, 6, 8, 9], 'Super locrian'], // G♯ A B C D E F
+      [[0, 1, 3, 4, 6, 8, 9], 'Super Locrian'], // G♯ A B C D E F
     ],
     "Melodic Minor": [
       [[0, 2, 3, 5, 7, 9, 11], 'Melodic Minor'], // A B C D E F♯ G♯
       [[0, 1, 3, 5, 7, 9, 10], 'Dorian ♭9'], // B C D E F♯ G♯ A
-      [[0, 2, 4, 6, 8, 9, 11], 'Lydian augmented'], // C D E F♯ G♯ A B
-      [[0, 2, 4, 6, 7, 9, 10], 'Lydian dominant'], // D E F♯ G♯ A B C
+      [[0, 2, 4, 6, 8, 9, 11], 'Lydian Augmented'], // C D E F♯ G♯ A B
+      [[0, 2, 4, 6, 7, 9, 10], 'Lydian Dominant'], // D E F♯ G♯ A B C
       [[0, 2, 4, 5, 7, 8, 10], 'Mixolydian ♭6'], // E F♯ G♯ A B C D
       [[0, 2, 3, 5, 6, 9, 10], 'Aeolian ♭5'], // F♯ G♯ A B C D E 
-      [[0, 1, 3, 4, 6, 8, 10], 'Altered scale'] // G♯ A B C D E F♯ 
+      [[0, 1, 3, 4, 6, 8, 10], 'Altered Scale'] // G♯ A B C D E F♯ 
+    ],
+    "Major Bebop": [
+      [[0, 2, 4, 5, 7, 8, 9, 11], 'Major Bebop'], // C D E F G G♯ A B
+      [[0, 2, 3, 5, 6, 7, 9, 10], 'Dorian Blues'], // D E F G G♯ A B C
+      [[0, 1, 3, 4, 5, 7, 8, 10], 'Mode 3'], // E F G G♯ A B C D
+      [[0, 2, 3, 4, 6, 7, 9, 11], 'Mode 4'], // F G G♯ A B C D E
+      [[0, 1, 2, 4, 5, 7, 9, 10], 'Mode 5'], // G G♯ A B C D E F
+      [[0, 1, 3, 4, 6, 8, 9, 11], 'Mode 6'], // G♯ A B C D E F G
+      [[0, 2, 3, 5, 7, 8, 10, 11], 'Mode 7'], // A B C D E F G G♯
+      [[0, 1, 3, 5, 6, 8, 9, 10], 'Mode 8'] // B C D E F G G♯ A
+    ],
+    "Minor Bebop": [
+      [[0, 2, 3, 4, 5, 7, 9, 10], 'Minor Bebop'], // D E F F♯ G A B C
+      [[0, 1, 2, 3, 5, 7, 8, 10], 'Mode 2'], // E F F♯ G A B C D
+      [[0, 1, 2, 4, 6, 7, 9, 11], 'Mode 3'], // F F♯ G A B C D E
+      [[0, 1, 3, 5, 6, 8, 10, 11], 'Mode 4'], // F♯ G A B C D E F
+      [[0, 2, 4, 5, 7, 9, 10, 11], 'Dominant Bebop'], // G A B C D E F F♯ 
+      [[0, 2, 3, 5, 7, 8, 9, 10], 'Mode 6'], // A B C D E F F♯ G
+      [[0, 1, 3, 5, 6, 7, 8, 10], 'Mode 7'], // B C D E F F♯ G A
+      [[0, 2, 5, 5, 6, 7, 9, 11], 'Mode 8'] // C D E F F♯ G A B
     ],
     "Augmented": [
-      [[0, 3, 4, 7, 8, 11], 'Augmented Scale'], // C E♭ E G A♭ B
-      [[0, 1, 4, 5, 8, 9], 'Augmented Scale'], // E♭ E G A♭ B C
-      [[0, 3, 4, 7, 8, 11], 'Augmented'], // E G A♭ B C E♭ 
-      [[0, 1, 4, 5, 8, 9], 'Augmented Scale'], // G A♭ B C E♭ E
-      [[0, 3, 4, 7, 8, 11], 'Augmented Scale'], // A♭ B C E♭ E G
-      [[0, 1, 4, 5, 8, 9], 'Augmented Scale'] // B C E♭ E G A♭ 
-    ],
-    "Whole Tone": [
-      [[0, 2, 4, 5, 8, 10], 'Whole Tone Scale'],
-      [[0, 2, 4, 5, 8, 10], 'Whole Tone Scale'],
-      [[0, 2, 4, 5, 8, 10], 'Whole Tone Scale'],
-      [[0, 2, 4, 5, 8, 10], 'Whole Tone Scale'],
-      [[0, 2, 4, 5, 8, 10], 'Whole Tone Scale'],
-      [[0, 2, 4, 5, 8, 10], 'Whole Tone Scale'],
+      [[0, 3, 4, 7, 8, 11], 'Augmented Mode 1'], // C E♭ E G A♭ B
+      [[0, 1, 4, 5, 8, 9], 'Augmented Mode 2'] // E♭ E G A♭ B C
     ],
     "HW Diminished": [
       [[0, 1, 3, 4, 6, 7, 9, 10], 'HW Diminished'], // C D♭ E♭ E F♯ G A B♭
-      [[0, 2, 3, 5, 6, 8, 9, 11], 'WH Diminished'], // D♭ E♭ E F♯ G A B♭ C
-      [[0, 1, 3, 4, 6, 7, 9, 10], 'HW Diminished'], // E♭ E F♯ G A B♭ C D♭ 
-      [[0, 2, 3, 5, 6, 8, 9, 11], 'WH Diminished'], // E F♯ G A B♭ C D♭ E♭ 
-      [[0, 1, 3, 4, 6, 7, 9, 10], 'HW Diminished'], // F♯ G A B♭ C D♭ E♭ E
-      [[0, 2, 3, 5, 6, 8, 9, 11], 'WH Diminished'], // G A B♭ C D♭ E♭ E F♯ 
-      [[0, 1, 3, 4, 6, 7, 9, 10], 'HW Diminished'], // A B♭ C D♭ E♭ E F♯ G
-      [[0, 2, 3, 5, 6, 8, 9, 11], 'WH Diminished'], // B♭ C D♭ E♭ E F♯ G A
+      [[0, 2, 3, 5, 6, 8, 9, 11], 'WH Diminished'] // dim, dim7, m-maj7♭5
     ],
-    "Major Bebop": [
-      [[0, 2, 4, 5, 7, 8, 9, 11], 'Major bebop'], // C D E F G G♯ A B
-      [[0, 2, 3, 5, 6, 7, 9, 10], 'Dorian blues'], // D E F G G♯ A B C
-      [[0, 1, 3, 4, 5, 7, 8, 10], ''], // E F G G♯ A B C D
-      [[0, 2, 3, 4, 6, 7, 9, 11], ''], // F G G♯ A B C D E
-      [[0, 1, 2, 4, 5, 7, 9, 10], ''], // G G♯ A B C D E F
-      [[0, 1, 3, 4, 6, 8, 9, 11], ''], // G♯ A B C D E F G
-      [[0, 2, 3, 5, 7, 8, 10, 11], ''], // A B C D E F G G♯
-      [[0, 1, 3, 5, 6, 8, 9, 10], ''] // B C D E F G G♯ A
-    ],
-    "Minor Bebop": [
-      [[0, 2, 3, 4, 5, 7, 9, 10], 'Minor bebop'], // D E F F♯ G A B C
-      [[0, 1, 2, 3, 5, 7, 8, 10], ''], // E F F♯ G A B C D
-      [[0, 1, 2, 4, 6, 7, 9, 11], ''], // F F♯ G A B C D E
-      [[0, 1, 3, 5, 6, 8, 10, 11], ''], // F♯ G A B C D E F
-      [[0, 2, 4, 5, 7, 9, 10, 11], 'Dominant bebop'], // G A B C D E F F♯ 
-      [[0, 2, 3, 5, 7, 8, 9, 10], ''], // A B C D E F F♯ G
-      [[0, 1, 3, 5, 6, 7, 8, 10], ''], // B C D E F F♯ G A
-      [[0, 2, 5, 5, 6, 7, 9, 11], ''] // C D E F F♯ G A B
-    ],
+    "Whole Tone": [
+      [[0, 2, 4, 6, 8, 10], 'Whole Tone']
+    ]
   }
 ];
