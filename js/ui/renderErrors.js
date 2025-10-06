@@ -7,6 +7,7 @@ export function notEnoughNotesError(notes) {
   setLocalStorage('chordName', '');
   setLocalStorage('foundChord', {});
   setLocalStorage('scaleFromUniqueNote', []);
+  setLocalStorage('userFretNumbers', []);
 
   errorOutput.classList.add('show');
 
@@ -21,6 +22,7 @@ export function noMatchError(notes) {
   setLocalStorage('chordName', '');
   setLocalStorage('foundChord', {});
   setLocalStorage('scaleFromUniqueNote', []);
+  setLocalStorage('userFretNumbers', []);
   
   errorOutput.classList.add('show');
 

@@ -1,5 +1,4 @@
 import { chordIntervals } from "../data/chord-intervals.js"
-import { chordIntervals2 } from "../data/chord-intervals2.js"
 
 export const chordFound = [];
 
@@ -10,7 +9,7 @@ export function searchForChordMatch(arr) {
   chordFound.length = 0;
 
   // Filter all chordIntervals to find matches, then push them all at once
-  const matches = chordIntervals2.filter(chord =>
+  const matches = chordIntervals.filter(chord =>
     arr.length === chord.steps.length &&
     arr.every(interval => chord.steps.includes(interval))
   );

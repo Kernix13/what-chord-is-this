@@ -58,7 +58,6 @@ function getChordName() {
     intervalsForUniqueNotes = uniqueUserNotes.map(note =>
       scaleFromUniqueNote.indexOf(note)
     );
-    console.log('intervalsForUniqueNotes', intervalsForUniqueNotes)
   
     // 6. Create an object: key = note interval, value = note
     const intervalsAndNotes = {};

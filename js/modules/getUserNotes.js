@@ -1,4 +1,4 @@
-import { getLocalStorage } from "../utils/storage.js";
+import { getLocalStorage, setLocalStorage } from "../utils/storage.js";
 
 /**
  * STEP 2: convert each fret number into a note
@@ -16,6 +16,8 @@ export function getUserNotes(arr, allUserStrings) {
       userFretNumbers.push(input.value);
     }
   });
+  
+  setLocalStorage('userFretNumbers', userFretNumbers);
 
   currentUserStrings.forEach((_, i) => {
     const stringNotes = allUserStrings[i];

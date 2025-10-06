@@ -12,6 +12,7 @@ export function resetAllData(...arrays) {
   setLocalStorage('chordName', '');
   setLocalStorage('foundChord', {});
   setLocalStorage('scaleFromUniqueNote', []);
+  setLocalStorage('userFretNumbers', []);
 
   // Reset UI
   titleChord.innerText = '';
@@ -86,7 +87,7 @@ export function createScaleDegreesCard(str, arr) {
 
   const a = document.createElement('a')
   a.setAttribute('href', '#')
-  a.append(document.createTextNode('See the notes in each scale above for this chord'))
+  a.append(document.createTextNode('See the notes in these modes for this chord ⇾'))
 
   card.append(degreesOl) 
   card.append(a)
