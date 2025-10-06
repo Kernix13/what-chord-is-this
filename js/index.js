@@ -5,7 +5,7 @@ import { userFretNotes } from './modules/userFretNotes.js';
 import { resetAllData, createTitleCard, createCard, createScaleDegreesCard, createDegreesNotesCard } from "./ui/renderResults.js";
 import { buildUserStrings } from "./modules/buildUserStrings.js";
 import { getUserNotes } from "./modules/getUserNotes.js";
-import { getLocalStorage } from "./utils/storage.js";
+import { getLocalStorage, setLocalStorage } from "./utils/storage.js";
 import { SHARPS, FLATS } from "./data/constants.js";
 import fixEnharmonics from "./modules/fixEnharmonics.js";
 import { chordFound } from "./modules/searchForChordMatch.js";
@@ -41,7 +41,7 @@ function getChordName() {
   for (const userNote of uniqueUserNotes) {
 
     // 4. Build 12-note string arrays for each unique USER note
-    const savedSettings = getLocalStorage();
+    const savedSettings = getLocalStorage('userSettings');
     const userKey = savedSettings.keyId;
 
     if (userKey === 'sharp') {
@@ -58,7 +58,6 @@ function getChordName() {
     intervalsForUniqueNotes = uniqueUserNotes.map(note =>
       scaleFromUniqueNote.indexOf(note)
     );
-    console.log('intervalsForUniqueNotes', intervalsForUniqueNotes)
   
     // 6. Create an object: key = note interval, value = note
     const intervalsAndNotes = {};
@@ -79,6 +78,7 @@ function getChordName() {
       // E.g.: G6/D ['G', 'G♯', 'A', 'A♯', 'B', 'C', 'C♯', 'D', 'D♯', 'E', 'F', 'F♯']
       // G♯ s\b A♭, A♯ s\b B♭, C♯ s\b D♭, D♯ is ok or maybe E♭
       console.log('scaleFromUniqueNote', scaleFromUniqueNote)
+      setLocalStorage('scaleFromUniqueNote', scaleFromUniqueNote);
       // 11. Join the users' notes
       const userNotes = uniqueUserNotes.join('-');
 
@@ -99,6 +99,7 @@ function getChordName() {
 
       // 13. use non-slash chord name for scale degrees card
       const chordName = userNote + chordFound[0].Chord;
+      setLocalStorage('chordName', chordName);
 
       // 14. Get "Equal Chords" if chordFound has that property then join
       const equalChordNames = chordFound[0]['Equal Chords']

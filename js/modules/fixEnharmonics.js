@@ -1,5 +1,6 @@
 import { searchForChordMatch, chordFound } from "./searchForChordMatch.js"; 
 import { SHARP, FLAT } from "../data/constants.js";
+import { setLocalStorage } from "../utils/storage.js";
 
 const flatKey = document.getElementById('flat'); 
 
@@ -11,6 +12,7 @@ const flatKey = document.getElementById('flat');
 export default function fixEnharmonics(object, arr, arr2) {
   searchForChordMatch(arr2);
   if (chordFound.length > 0) {
+    setLocalStorage('foundChord', chordFound[0]);
     // 9. if blocks to handle special cases such as enharmonic equivalents
     // 1. Fix flat 9's if the ♭9 is a sharp
     if (object.hasOwnProperty(1) && object[1].length === 2) {
