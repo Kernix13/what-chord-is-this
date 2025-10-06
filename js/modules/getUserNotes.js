@@ -5,7 +5,7 @@ import { getLocalStorage } from "../utils/storage.js";
  */
 export function getUserNotes(arr, allUserStrings) {
   const userFretNumbers = [];
-  const { strings: currentUserStrings } = getLocalStorage();
+  const { strings: currentUserStrings } = getLocalStorage('userSettings');
 
   const numberInputs = document.querySelectorAll('input[type="number"]');
 

@@ -20,8 +20,8 @@ export function onFirstVisit() {
       keyId: 'sharp'
     }
   
-  if (!getLocalStorage()) {
-    setLocalStorage(initialSettings);
+  if (!getLocalStorage('userSettings')) {
+    setLocalStorage('userSettings', initialSettings);
     loadTunings(0);
     loadStrings(0);
     keys[0].setAttribute('checked', '');
@@ -29,7 +29,7 @@ export function onFirstVisit() {
     document.getElementById('str-1').focus();
   } else {
       // Get localStorage object & add selected to userSettings instrument
-      const savedSettings = getLocalStorage();
+      const savedSettings = getLocalStorage('userSettings');
       instrumentsOptions[savedSettings.instrument].setAttribute('selected', '');
       
       // Load tunings and add selected to the tuning in localStorage
@@ -63,7 +63,7 @@ export function toggleSettingsForm() {
 
 // Function for instruments select list listener
 export function onInstrumentChange(event) {
-  const savedSettings = getLocalStorage();
+  const savedSettings = getLocalStorage('userSettings');
   
     // Get all select list option elements, find the selected instrument
     const options = [...event.target.options]
@@ -80,7 +80,7 @@ export function onInstrumentChange(event) {
     selectedInstrument[0].setAttribute('selected', '');
   
     // Update localStorage
-    setLocalStorage({ ...savedSettings, instrument:  parseInt(selectedInstrument[0].value), tuning: 0, strings: standardTuningStrings });
+    setLocalStorage('userSettings', { ...savedSettings, instrument:  parseInt(selectedInstrument[0].value), tuning: 0, strings: standardTuningStrings });
   
     // Remove old tunings from select list
     [...tuningsSelect.children].forEach(tuning => tuning.remove());
@@ -95,7 +95,7 @@ export function onInstrumentChange(event) {
 
 // Function for tunings select list listener
 export function onTuningChange(event) {
-  const savedSettings = getLocalStorage();
+  const savedSettings = getLocalStorage('userSettings');
   
   // Get all select list option elements, find the selected tuning
   const options = [...event.target.options];
@@ -124,7 +124,7 @@ export function onTuningChange(event) {
   }
 
   // Update localStorage
-  setLocalStorage({ instrument: savedSettings.instrument, tuning: parseInt(selectedTuning[0].value), strings: userTuningStrings, keyId: newKeyId });
+  setLocalStorage('userSettings', { instrument: savedSettings.instrument, tuning: parseInt(selectedTuning[0].value), strings: userTuningStrings, keyId: newKeyId });
 
   // Remove string inputs for old instrument/tuning
   [...stringsDiv.children].forEach(string => string.remove());
@@ -134,7 +134,7 @@ export function onTuningChange(event) {
 
 // Function for keys radio buttons listener
 export function onKeyChange(event) {
-  const savedSettings = getLocalStorage();
+  const savedSettings = getLocalStorage('userSettings');
     
   if (savedSettings.keyId === 'flat' && event.target.id === 'flat') return;
   if (savedSettings.keyId === 'sharp' && event.target.id === 'sharp') return;
@@ -144,6 +144,6 @@ export function onKeyChange(event) {
   */ 
 
   savedSettings.keyId === 'flat'
-    ? setLocalStorage({ ...savedSettings, keyId: 'sharp' })
-    : setLocalStorage({ ...savedSettings, keyId: 'flat' });
+    ? setLocalStorage('userSettings', { ...savedSettings, keyId: 'sharp' })
+    : setLocalStorage('userSettings', { ...savedSettings, keyId: 'flat' });
 }

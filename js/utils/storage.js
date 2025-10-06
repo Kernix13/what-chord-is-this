@@ -1,7 +1,7 @@
-export function setLocalStorage(obj) {
-  localStorage.setItem('userSettings', JSON.stringify(obj));
+export function setLocalStorage(str, obj) {
+  localStorage.setItem(str, JSON.stringify(obj));
 }
 
-export function getLocalStorage() {
-  return JSON.parse(localStorage.getItem('userSettings'));
+export function getLocalStorage(str) {
+  return JSON.parse(localStorage.getItem(str));
 }

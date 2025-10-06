@@ -233,6 +233,7 @@ input[type="number"] {
   display: grid;
   gap: 1rem;
   grid-template-columns: 1fr;
+  text-align: center;
 }
 
 .scale-degrees-list,

@@ -1,3 +1,5 @@
+import { setLocalStorage } from "../utils/storage.js";
+
 const titleChord = document.getElementById('title-chord');
 const results = document.getElementById('results');
 
@@ -5,6 +7,11 @@ const results = document.getElementById('results');
 export function resetAllData(...arrays) {
   // Clear all arrays passed in
   arrays.forEach(arr => arr.length = 0);
+
+  // Clear local storage for the saved chord data
+  setLocalStorage('chordName', '');
+  setLocalStorage('foundChord', {});
+  setLocalStorage('scaleFromUniqueNote', []);
 
   // Reset UI
   titleChord.innerText = '';
@@ -71,13 +78,18 @@ export function createScaleDegreesCard(str, arr) {
 
   arr.forEach(scale => {
     const li = document.createElement('li');
-    const liText = document.createTextNode(`${Object.keys(scale)}: ${Object.values(scale)}`);
+    const liText = document.createTextNode(`${scale.scale}: ${scale.ordinals.join(', ')}`);
 
     li.append(liText);
     degreesOl.append(li)
   });
 
+  const a = document.createElement('a')
+  a.setAttribute('href', '#')
+  a.append(document.createTextNode('See the notes in each scale above for this chord'))
+
   card.append(degreesOl) 
+  card.append(a)
   results.append(card)
 }
 
