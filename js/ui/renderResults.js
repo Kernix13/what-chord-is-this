@@ -66,15 +66,14 @@ export function createScaleDegreesCard(str, arr) {
   card.className = 'card scale-degrees';
 
   const degreesTitle = document.createElement('h3');
-  degreesTitle.append(document.createTextNode('Scale degrees that build '))
-
   const degreesTitleChord = document.createElement('span');
+  const degreesOl = document.createElement('ol');
+
+  degreesTitle.append(document.createTextNode('Scale degrees that build '))
   degreesTitleChord.append(document.createTextNode(`${str}:`))
-  
   degreesTitle.append(degreesTitleChord)
   card.append(degreesTitle)
 
-  const degreesOl = document.createElement('ol');
   degreesOl.className = 'scale-degrees-list';
 
   arr.forEach(scale => {
