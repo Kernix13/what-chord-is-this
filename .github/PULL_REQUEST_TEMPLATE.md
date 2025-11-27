@@ -1,14 +1,14 @@
 ## Description
 
-<!-- Please include a detailed summary of the changes made. -->
+<!-- Please include a detailed summary of the changes made - you can delete these comments. -->
 
 ## Checklist
 
-<!-- Place an x in the [ ] to check off the type of change for this PR -->
+<!-- Place an x in the [ ] to check off the type of change for this PR, remove the spaces, e.g. [x] not [ x] or [x ] -->
 
-- [ ] Have you checked to ensure there aren't other open [Pull Requests](../../../pulls) for the same update/change?
+- [ ] Have you checked to ensure there aren't other open [Pull Requests](https://github.com/Kernix13/what-chord-is-this/issues) for the same update/change?
 - [ ] I have a descriptive title for my PR
-- [ ] I have read and followed the [contribution guidelines](./CONTRIBUTING.MD).
+- [ ] I have read and followed the [contribution guidelines](../CONTRIBUTING.md).
 - [ ] I have tested these changes locally on my machine.
 - [ ] I have linked this PR to the corresponding issue. [See how to do that here.](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue)
 
