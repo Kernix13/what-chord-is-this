@@ -2,6 +2,9 @@
 
 <!-- Please include a clear and detailed description of the issue. You can delete this comment when done. -->
 
+Before submitting, please check the existing issues to see if this has already been reported:
+[Open Issues](https://github.com/Kernix13/what-chord-is-this/issues)
+
 ## Steps to Reproduce (if applicable)
 
 <!-- Provide the steps needed to reproduce the issue. Include code, screenshots, or links if relevant. -->
