@@ -141,7 +141,6 @@ export const chordIntervals = [
     Intervals: ["1", "3", "5", "9"],
     steps: [0, 4, 7, 2],
     Tendency: ["I", "V"],
-    Tendency: ["I", "V"],
     "Equal Chords": [
       { key: 7, name: "6 sus" }
     ],
@@ -928,7 +927,7 @@ export const chordIntervals = [
         "scale": "Minor Bebop",
         "ordinals": ["1st", "5th"],
         "degrees": [0, 4]
-      },
+      }
     ]
   },
   {
@@ -3809,7 +3808,7 @@ export const chordIntervals = [
         "scale": "HW Diminished",
         "ordinals": ["1st"],
         "degrees": [0]
-      },
+      }
     ]
   },
   {
