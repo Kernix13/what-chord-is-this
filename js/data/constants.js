@@ -62,7 +62,7 @@ export const FLAT_TUNINGS = [
   TUNINGS[3]["Slide Tuning"]
 ];
 
-/* This data structure is wrong, and so is my scales in chord-intervals.js */
+/* I think this data structure is wrong */
 
 export const SCALES = [
   {
