@@ -2,6 +2,9 @@
 
 "**_What Chord Is This?_**" is a lightweight web app that helps musicians identify chords instantly. Enter three or more fret numbers and the app returns the matching chord (or an error if no chord is found). Supports Guitar, Banjo, Mandolin, and Ukulele. Built with pure HTML, CSS, and JavaScript.
 
+> [!NOTE]
+> This app is ~95-99% complete. I intend to improve the styling for the results cards, and I still have to implement the output for all scales that build the chord.
+
 ## Features
 
 - **Multi-instrument support:** Handles Guitar (default), Banjo, Mandolin, and Ukulele, each with customizable tunings.
