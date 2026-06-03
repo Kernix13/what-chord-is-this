@@ -1126,6 +1126,7 @@ export const chordIntervals = [
     Intervals: ["3", "5", "♭7", "13"],
     steps: [4, 7, 10, 9],
     Tendency: ["IV"],
+    "Equal Chords": [{ key: 4, name: "dim add11" }],
     scales: [
       {
         "scale": "Major Scale",
@@ -3455,8 +3456,7 @@ export const chordIntervals = [
     steps: [0, 3, 6, 5],
     Tendency: ["♭II"],
     "Equal Chords": [
-      { key: 3, name: "m6 add9" },
-      { key: 5, name: "7sus ♭9" }
+      { key: 8, name: "13 NR" }
     ],
     scales: [
       {
