@@ -158,3 +158,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## Acknowledgements
 
 This project was inspired by the need for a simple, framework-free chord identification tool for fretted string instruments.
+
+<!-- Testing the git statuscommand with --short flag -->
